@@ -1,0 +1,13 @@
+{
+    "dialog-state": {
+        "query": "occu",
+        "path": "C:/Users/61413/Documents/ready4/Code",
+        "regex": false,
+        "caseSensitive": false,
+        "filePatterns": [],
+        "excludeFilePatterns": [],
+        "resultsCount": 61,
+        "errorCount": 0,
+        "replaceErrors": ""
+    }
+}
