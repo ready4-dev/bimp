@@ -9,7 +9,7 @@ add_main_calcs_tb(input_data_ls, OOS_buffer_prop_dbl = 0.1)
 \arguments{
 \item{input_data_ls}{Input data (a list)}
 
-\item{OOS_buffer_prop_dbl}{OOS buffer prop (a double vector), Default: 0.1}
+\item{OOS_buffer_prop_dbl}{Occasion of service buffer prop (a double vector), Default: 0.1}
 }
 \value{
 Input data (a list)

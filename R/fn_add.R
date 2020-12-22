@@ -17,7 +17,7 @@ add_eftv_wkly_hrs <- function (resources_tb)
 #' Add main calcs
 #' @description add_main_calcs_tb() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add main calcs tibble. Function argument input_data_ls specifies the object to be updated. The function returns Input data (a list).
 #' @param input_data_ls Input data (a list)
-#' @param OOS_buffer_prop_dbl OOS buffer prop (a double vector), Default: 0.1
+#' @param OOS_buffer_prop_dbl Occasion of service buffer prop (a double vector), Default: 0.1
 #' @return Input data (a list)
 #' @rdname add_main_calcs_tb
 #' @export 
@@ -34,8 +34,8 @@ add_main_calcs_tb <- function (input_data_ls, OOS_buffer_prop_dbl = 0.1)
         add_n_epsds_per_yr() %>% add_n_OOS_per_yr() %>% add_OOS_mins_per_yr(OOS_buffer_prop_dbl = OOS_buffer_prop_dbl)
     return(input_data_ls)
 }
-#' Add max wkly OOS hrs
-#' @description add_max_wkly_OOS_hrs() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add max wkly oos hrs. Function argument resources_tb specifies the object to be updated. The function returns Resources (a tibble).
+#' Add max wkly Occasion of service hrs
+#' @description add_max_wkly_OOS_hrs() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add max wkly occasion of service hrs. Function argument resources_tb specifies the object to be updated. The function returns Resources (a tibble).
 #' @param resources_tb Resources (a tibble)
 #' @return Resources (a tibble)
 #' @rdname add_max_wkly_OOS_hrs
@@ -49,8 +49,8 @@ add_max_wkly_OOS_hrs <- function (resources_tb)
         Non_OOS_Weekly_Hours_Per_Unit_dbl, ~max(.x - .y, 0)))
     return(resources_tb)
 }
-#' Add meets non OOS wkly hrs test
-#' @description add_meets_non_OOS_wkly_hrs_test() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add meets non oos wkly hrs test. Function argument resources_tb specifies the object to be updated. The function returns Resources (a tibble).
+#' Add meets non Occasion of service wkly hrs test
+#' @description add_meets_non_OOS_wkly_hrs_test() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add meets non occasion of service wkly hrs test. Function argument resources_tb specifies the object to be updated. The function returns Resources (a tibble).
 #' @param resources_tb Resources (a tibble)
 #' @return Resources (a tibble)
 #' @rdname add_meets_non_OOS_wkly_hrs_test
@@ -63,8 +63,8 @@ add_meets_non_OOS_wkly_hrs_test <- function (resources_tb)
         Non_OOS_Weekly_Hours_Per_Unit_dbl))
     return(resources_tb)
 }
-#' Add n epsds per yr
-#' @description add_n_epsds_per_yr() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add n epsds per yr. Function argument main_calcs_tb specifies the object to be updated. The function returns Main calcs (a tibble).
+#' Add n episodes per yearr
+#' @description add_n_epsds_per_yr() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add n episodes per yearr. Function argument main_calcs_tb specifies the object to be updated. The function returns Main calcs (a tibble).
 #' @param main_calcs_tb Main calcs (a tibble)
 #' @return Main calcs (a tibble)
 #' @rdname add_n_epsds_per_yr
@@ -81,8 +81,8 @@ add_n_epsds_per_yr <- function (main_calcs_tb)
                   365.25, NA_real_))))))
     return(main_calcs_tb)
 }
-#' Add n OOS per yr
-#' @description add_n_OOS_per_yr() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add n oos per yr. Function argument main_calcs_tb specifies the object to be updated. The function returns Main calcs (a tibble).
+#' Add n Occasion of service per yearr
+#' @description add_n_OOS_per_yr() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add n occasion of service per yearr. Function argument main_calcs_tb specifies the object to be updated. The function returns Main calcs (a tibble).
 #' @param main_calcs_tb Main calcs (a tibble)
 #' @return Main calcs (a tibble)
 #' @rdname add_n_OOS_per_yr
@@ -95,10 +95,10 @@ add_n_OOS_per_yr <- function (main_calcs_tb)
         n_epsds_per_yr)
     return(main_calcs_tb)
 }
-#' Add OOS mins per yr
-#' @description add_OOS_mins_per_yr() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add oos mins per yr. Function argument main_calcs_tb specifies the object to be updated. The function returns Main calcs (a tibble).
+#' Add Occasion of service minutes per yearr
+#' @description add_OOS_mins_per_yr() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add occasion of service minutes per yearr. Function argument main_calcs_tb specifies the object to be updated. The function returns Main calcs (a tibble).
 #' @param main_calcs_tb Main calcs (a tibble)
-#' @param OOS_buffer_prop_dbl OOS buffer prop (a double vector), Default: 0.1
+#' @param OOS_buffer_prop_dbl Occasion of service buffer prop (a double vector), Default: 0.1
 #' @return Main calcs (a tibble)
 #' @rdname add_OOS_mins_per_yr
 #' @export 
@@ -110,8 +110,8 @@ add_OOS_mins_per_yr <- function (main_calcs_tb, OOS_buffer_prop_dbl = 0.1)
         Duration_OOS_Mins_dbl * (1 + OOS_buffer_prop_dbl))
     return(main_calcs_tb)
 }
-#' Add resc occupcy
-#' @description add_resc_occupcy_tb() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add resc occupcy tibble. Function argument input_data_ls specifies the object to be updated. The function returns Input data (a list).
+#' Add resource occupancy
+#' @description add_resc_occupcy_tb() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add resource occupancy tibble. Function argument input_data_ls specifies the object to be updated. The function returns Input data (a list).
 #' @param input_data_ls Input data (a list)
 #' @return Input data (a list)
 #' @rdname add_resc_occupcy_tb

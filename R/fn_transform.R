@@ -73,7 +73,7 @@ transform_inp_data_for_ress_calcs <- function (input_data_ls)
 #' Transform input list for analysis
 #' @description transform_inp_ls_for_analysis() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform input list for analysis. Function argument input_data_ls specifies the object to be updated. Argument OOS_buffer_prop_dbl provides the object to be updated. The function returns Transformed input data (a list).
 #' @param input_data_ls Input data (a list)
-#' @param OOS_buffer_prop_dbl OOS buffer prop (a double vector), Default: 0.1
+#' @param OOS_buffer_prop_dbl Occasion of service buffer prop (a double vector), Default: 0.1
 #' @return Transformed input data (a list)
 #' @rdname transform_inp_ls_for_analysis
 #' @export 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_update.R
 \name{update_intv_recps_per_OOS}
 \alias{update_intv_recps_per_OOS}
-\title{Update intv recps per OOS}
+\title{Update intv recps per Occasion of service}
 \usage{
 update_intv_recps_per_OOS(main_calcs_tb)
 }
@@ -10,6 +10,6 @@ update_intv_recps_per_OOS(main_calcs_tb)
 \item{main_calcs_tb}{Main calcs (a tibble)}
 }
 \description{
-update_intv_recps_per_OOS() is an Update function that edits an object, while preserving core object attributes. Specifically, this function implements an algorithm to update intv recps per oos. Function argument main_calcs_tb specifies the object to be updated. The function is called for its side effects and does not return a value.
+update_intv_recps_per_OOS() is an Update function that edits an object, while preserving core object attributes. Specifically, this function implements an algorithm to update intv recps per occasion of service. Function argument main_calcs_tb specifies the object to be updated. The function is called for its side effects and does not return a value.
 }
 \keyword{internal}

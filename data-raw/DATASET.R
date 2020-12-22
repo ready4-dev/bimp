@@ -34,9 +34,9 @@ ready4fun::make_pkg_desc_ls(pkg_title_1L_chr = "Undertake budget impact analysis
 ## PART THREE
 ##
 # 5. Create a lookup table of abbreviations used in this package and save it as a package dataset (data gets saved in the data directory, documentation script is created in R directory).
-pkg_dss_tb <- ready4fun::write_abbr_lup(short_name_chr = character(0),
-                                        long_name_chr = character(0),
-                                        no_plural_chr = NA_character_,
+pkg_dss_tb <- ready4fun::write_abbr_lup(short_name_chr = c("epsd","min","occupcy","OOS","resc","yr"),
+                                        long_name_chr = c("episode","minute","occupancy","Occasion of service","resource","yearr"),
+                                        no_plural_chr = "occupancy",
                                         custom_plural_ls = NULL,
                                         url_1L_chr = NA_character_,
                                         seed_lup = map2aqol::abbreviations_lup)

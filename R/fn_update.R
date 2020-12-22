@@ -1,5 +1,5 @@
-#' Update intv recps per OOS
-#' @description update_intv_recps_per_OOS() is an Update function that edits an object, while preserving core object attributes. Specifically, this function implements an algorithm to update intv recps per oos. Function argument main_calcs_tb specifies the object to be updated. The function is called for its side effects and does not return a value.
+#' Update intv recps per Occasion of service
+#' @description update_intv_recps_per_OOS() is an Update function that edits an object, while preserving core object attributes. Specifically, this function implements an algorithm to update intv recps per occasion of service. Function argument main_calcs_tb specifies the object to be updated. The function is called for its side effects and does not return a value.
 #' @param main_calcs_tb Main calcs (a tibble)
 #' @return NULL
 #' @rdname update_intv_recps_per_OOS

@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_add.R
 \name{add_max_wkly_OOS_hrs}
 \alias{add_max_wkly_OOS_hrs}
-\title{Add max wkly OOS hrs}
+\title{Add max wkly Occasion of service hrs}
 \usage{
 add_max_wkly_OOS_hrs(resources_tb)
 }
@@ -13,6 +13,6 @@ add_max_wkly_OOS_hrs(resources_tb)
 Resources (a tibble)
 }
 \description{
-add_max_wkly_OOS_hrs() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add max wkly oos hrs. Function argument resources_tb specifies the object to be updated. The function returns Resources (a tibble).
+add_max_wkly_OOS_hrs() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add max wkly occasion of service hrs. Function argument resources_tb specifies the object to be updated. The function returns Resources (a tibble).
 }
 \keyword{internal}
