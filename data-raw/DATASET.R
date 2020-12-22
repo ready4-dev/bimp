@@ -1,4 +1,3 @@
-##
 # 1. Load magrittr package to that the pipe operator ("%>%") can be used in this script.
 library(magrittr)
 # 2. Create "fns", "gnrcs" and "mthds" sub-directories.
