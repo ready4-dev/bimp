@@ -1,0 +1,20 @@
+---
+title: "ready4cost"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ready4cost}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(ready4cost)
+```
+This development version of the ready4cost package has been made available as part of the process of testing and documenting the package. Currently there are no vignettes available.
