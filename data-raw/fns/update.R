@@ -9,3 +9,12 @@ update_main_calcs_with_met_dmd <- function(input_data_ls){
                                                   by = "Resource_UID_chr")
   return(input_data_ls)
 }
+update_resc_occupcy_tb <- function(resc_occupcy_tb){
+  resc_occupcy_tb <- resc_occupcy_tb  %>%
+    dplyr::select(Resource_UID_chr, OOS_resource_occupancy_dbl,	OOS_serviced_demand_dbl) %>%
+    dplyr::mutate(Resource_Use = paste0(round(OOS_resource_occupancy_dbl * 100,2), " %")) %>%
+    dplyr::mutate(Demand_Met = paste0(round(OOS_serviced_demand_dbl * 100,2), " %")) %>%
+    dplyr::select(-OOS_resource_occupancy_dbl,	-OOS_serviced_demand_dbl) %>%
+    bind_resource_tbs(resources_tb = nat_data_ls$resources_tb)
+  return(resc_occupcy_tb)
+}

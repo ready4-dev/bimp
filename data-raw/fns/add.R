@@ -14,7 +14,8 @@ add_main_calcs_tb <- function(input_data_ls,
     update_intv_recps_per_OOS() %>%
     add_n_epsds_per_yr() %>%
     add_n_OOS_per_yr() %>%
-    add_OOS_mins_per_yr(OOS_buffer_prop_dbl = OOS_buffer_prop_dbl)
+    add_OOS_mins_per_yr(OOS_buffer_prop_dbl = OOS_buffer_prop_dbl) %>%
+    dplyr::filter(!is.na(Resource_UID_chr))
   return(input_data_ls)
 }
 add_max_wkly_OOS_hrs <- function(resources_tb){
@@ -33,15 +34,18 @@ add_n_epsds_per_yr <- function(main_calcs_tb){
   main_calcs_tb <- main_calcs_tb %>%
     dplyr::mutate(n_epsds_per_yr = Indications_dbl / Recipients_Per_Episode_dbl * ifelse(Timeframe_In_Weeks_chr == "Yearly",
                                                                                          1,
-                                                                                         ifelse(Timeframe_In_Weeks_chr == "Monthly",
-                                                                                                12,
-                                                                                                ifelse(Timeframe_In_Weeks_chr == "Fortnightly",
-                                                                                                       365.25/7/2,
-                                                                                                       ifelse(Timeframe_In_Weeks_chr == "Weekly",
-                                                                                                              365.25/7,
-                                                                                                              ifelse(Timeframe_In_Weeks_chr == "Daily",
-                                                                                                                     365.25,
-                                                                                                                     NA_real_))))))
+                                                                                         ifelse(Timeframe_In_Weeks_chr == "Quarterly",
+                                                                                                4,
+                                                                                                ifelse(Timeframe_In_Weeks_chr == "Monthly",
+                                                                                                       12,
+                                                                                                       ifelse(Timeframe_In_Weeks_chr == "Fortnightly",
+                                                                                                              365.25/7/2,
+                                                                                                              ifelse(Timeframe_In_Weeks_chr == "Weekly",
+                                                                                                                     365.25/7,
+                                                                                                                     ifelse(Timeframe_In_Weeks_chr == "Daily",
+                                                                                                                            365.25,
+                                                                                                                            NA_real_)))))
+                                                                                         ))
   return(main_calcs_tb)
 }
 add_n_OOS_per_yr <- function(main_calcs_tb){

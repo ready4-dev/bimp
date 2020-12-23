@@ -16,3 +16,5 @@
 ^\.github$
 ^initial_setup\.R$
 ^data-raw/gnrcs/generics\.R$
+^data-raw/fns/bind\.R$
+^data-raw/fns/remove\.R$

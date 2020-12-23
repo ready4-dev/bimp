@@ -21,7 +21,7 @@ add_eftv_wkly_hrs <- function (resources_tb)
 #' @return Input data (a list)
 #' @rdname add_main_calcs_tb
 #' @export 
-#' @importFrom dplyr left_join mutate
+#' @importFrom dplyr left_join mutate filter
 #' @keywords internal
 add_main_calcs_tb <- function (input_data_ls, OOS_buffer_prop_dbl = 0.1) 
 {
@@ -31,7 +31,8 @@ add_main_calcs_tb <- function (input_data_ls, OOS_buffer_prop_dbl = 0.1)
             Count_dbl) %>% dplyr::left_join(input_data_ls$interventions_tb, 
         by = "Intervention_UID_chr") %>% dplyr::left_join(input_data_ls$resources_tb, 
         by = "Resource_UID_chr") %>% update_intv_recps_per_OOS() %>% 
-        add_n_epsds_per_yr() %>% add_n_OOS_per_yr() %>% add_OOS_mins_per_yr(OOS_buffer_prop_dbl = OOS_buffer_prop_dbl)
+        add_n_epsds_per_yr() %>% add_n_OOS_per_yr() %>% add_OOS_mins_per_yr(OOS_buffer_prop_dbl = OOS_buffer_prop_dbl) %>% 
+        dplyr::filter(!is.na(Resource_UID_chr))
     return(input_data_ls)
 }
 #' Add max wkly Occasion of service hrs
@@ -75,10 +76,11 @@ add_n_epsds_per_yr <- function (main_calcs_tb)
 {
     main_calcs_tb <- main_calcs_tb %>% dplyr::mutate(n_epsds_per_yr = Indications_dbl/Recipients_Per_Episode_dbl * 
         ifelse(Timeframe_In_Weeks_chr == "Yearly", 1, ifelse(Timeframe_In_Weeks_chr == 
+            "Quarterly", 4, ifelse(Timeframe_In_Weeks_chr == 
             "Monthly", 12, ifelse(Timeframe_In_Weeks_chr == "Fortnightly", 
             365.25/7/2, ifelse(Timeframe_In_Weeks_chr == "Weekly", 
                 365.25/7, ifelse(Timeframe_In_Weeks_chr == "Daily", 
-                  365.25, NA_real_))))))
+                  365.25, NA_real_)))))))
     return(main_calcs_tb)
 }
 #' Add n Occasion of service per yearr
