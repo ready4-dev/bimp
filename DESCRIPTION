@@ -1,7 +1,7 @@
 Package: ready4cost
 Title: Undertake Budget Impact Analysis on Projets Developped
     with the Ready4 Suite
-Version: 0.0.0.9005
+Version: 0.0.0.9006
 Authors@R: 
     c(person(given = "Matthew",
              family = "Hamilton",
@@ -46,6 +46,7 @@ Imports:
     readxl,
     rlang,
     stats,
+    stringr,
     tibble
 VignetteBuilder: knitr
 Depends: 
