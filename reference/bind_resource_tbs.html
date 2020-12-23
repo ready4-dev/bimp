@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Import input data — import_input_data • ready4cost</title>
+<title>Bind resource tibbles — bind_resource_tbs • ready4cost</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Import input data — import_input_data" />
-<meta property="og:description" content="import_input_data() is an Import function that reads a data object in its native format and converts it to an R object. Specifically, this function implements an algorithm to import input data. The function returns Input data (a list)." />
+<meta property="og:title" content="Bind resource tibbles — bind_resource_tbs" />
+<meta property="og:description" content="bind_resource_tbs() is a Bind function that binds two instances of a data-frame type class together. Specifically, this function implements an algorithm to bind resource tibbles. The function returns Joined (a tibble)." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -119,29 +119,33 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Import input data</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ready4-dev/ready4cost/blob/master/R/fn_import.R'><code>R/fn_import.R</code></a></small>
-    <div class="hidden name"><code>import_input_data.Rd</code></div>
+    <h1>Bind resource tibbles</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ready4-dev/ready4cost/blob/master/R/fn_bind.R'><code>R/fn_bind.R</code></a></small>
+    <div class="hidden name"><code>bind_resource_tbs.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>import_input_data() is an Import function that reads a data object in its native format and converts it to an R object. Specifically, this function implements an algorithm to import input data. The function returns Input data (a list).</p>
+    <p>bind_resource_tbs() is a Bind function that binds two instances of a data-frame type class together. Specifically, this function implements an algorithm to bind resource tibbles. The function returns Joined (a tibble).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>import_input_data</span><span class='op'>(</span><span class='va'>path_to_data_1L_chr</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>bind_resource_tbs</span><span class='op'>(</span><span class='va'>res_use_tb</span>, <span class='va'>resources_tb</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>path_to_data_1L_chr</th>
-      <td><p>Path to data (a character vector of length one)</p></td>
+      <th>res_use_tb</th>
+      <td><p>Res use (a tibble)</p></td>
+    </tr>
+    <tr>
+      <th>resources_tb</th>
+      <td><p>Resources (a tibble)</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Input data (a list)</p>
+    <p>Joined (a tibble)</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
