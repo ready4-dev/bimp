@@ -47,11 +47,11 @@ utils::data("fn_type_lup_tb",package = "map2aqol")
 # ready4fun::get_new_fn_types(abbreviations_lup = abbreviations_lup,
 #                             fn_type_lup_tb = fn_type_lup_tb)
 pkg_dss_tb <- fn_type_lup_tb %>%
-  # ready4fun::add_rows_to_fn_type_lup(fn_type_nm_chr = ready4fun::get_new_fn_types(abbreviations_lup = abbreviations_lup,
-  #                                                                                 fn_type_lup_tb = fn_type_lup_tb),
-  #                                    fn_type_desc_chr = character(0),
-  #                                    is_generic_lgl = F,
-  #                                    is_method_lgl = F) %>%
+  ready4fun::add_rows_to_fn_type_lup(fn_type_nm_chr = ready4fun::get_new_fn_types(abbreviations_lup = abbreviations_lup,
+                                                                                  fn_type_lup_tb = fn_type_lup_tb),
+                                     fn_type_desc_chr = "Binds two instances of a data-frame type class together.",
+                                     is_generic_lgl = F,
+                                     is_method_lgl = F) %>%
   dplyr::arrange(fn_type_nm_chr) %>%
   ready4fun::write_dmtd_fn_type_lup(url_1L_chr = NA_character_,
                                     abbreviations_lup = abbreviations_lup,
