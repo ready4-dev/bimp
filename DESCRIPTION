@@ -1,7 +1,7 @@
 Package: bimp
 Title: Undertake Budget Impact Analysis on Projets Developped
     with the Ready4 Suite
-Version: 0.0.0.9007
+Version: 0.0.0.9008
 Authors@R: 
     c(person(given = "Matthew",
              family = "Hamilton",
@@ -15,8 +15,8 @@ Authors@R:
       person(given = "National Health and Medical Research Council",
              role = "fnd"))
 Description: Tools for undertaking budget impact analyses for
-    mental health projects.  This development version of the bimp
-    package has been made available as part of the process of testing and
+    mental health projects.  This development version of the bimp package
+    has been made available as part of the process of testing and
     documenting the package. The tools contained in this development
     release automate a number of tasks which MODIFY THE DIRECTORY
     STRUCTURE OF YOUR LOCAL MACHINE.  Therefore you should only trial this
@@ -38,12 +38,13 @@ RoxygenNote: 7.1.1
 Imports: 
     testthat,
     knitr,
-    ready4fun (>= 0.0.0.9267),
+    ready4fun (>= 0.0.0.9268),
     dplyr,
     magrittr,
     methods,
     purrr,
     readxl,
+    ready4show,
     rlang,
     stats,
     stringr,
