@@ -1,6 +1,6 @@
 #' Function type lookup table
 #' 
-#' A lookup table to find descriptions for different types of functions used within the ready4cost package suite.
+#' A lookup table to find descriptions for different types of functions used within the bimp package suite.
 #' 
 #' A tibble
 #' 

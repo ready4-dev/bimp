@@ -1,8 +1,8 @@
 ---
-title: "ready4cost"
+title: "bimp"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{ready4cost}
+  %\VignetteIndexEntry{bimp}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -15,6 +15,6 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(ready4cost)
+library(bimp)
 ```
-This development version of the ready4cost package has been made available as part of the process of testing and documenting the package. Currently there are no vignettes available.
+This development version of the bimp package has been made available as part of the process of testing and documenting the package. Currently there are no vignettes available.

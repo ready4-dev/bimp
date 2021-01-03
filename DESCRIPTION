@@ -1,4 +1,4 @@
-Package: ready4cost
+Package: bimp
 Title: Undertake Budget Impact Analysis on Projets Developped
     with the Ready4 Suite
 Version: 0.0.0.9007
@@ -15,7 +15,7 @@ Authors@R:
       person(given = "National Health and Medical Research Council",
              role = "fnd"))
 Description: Tools for undertaking budget impact analyses for
-    mental health projects.  This development version of the ready4cost
+    mental health projects.  This development version of the bimp
     package has been made available as part of the process of testing and
     documenting the package. The tools contained in this development
     release automate a number of tasks which MODIFY THE DIRECTORY
@@ -28,8 +28,8 @@ Description: Tools for undertaking budget impact analyses for
     therefore quite rudimentary. Human authored documentation will follow
     in 2021.
 License: GPL-3 + file LICENSE
-URL: https://ready4-dev.github.io/ready4cost/,
-    https://github.com/ready4-dev/ready4cost,
+URL: https://ready4-dev.github.io/bimp/,
+    https://github.com/ready4-dev/bimp,
     https://ready4-dev.github.io/ready4/
 Encoding: UTF-8
 LazyData: true

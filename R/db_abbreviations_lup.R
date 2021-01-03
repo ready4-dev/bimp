@@ -1,6 +1,6 @@
 #' Common abbreviations lookup table
 #' 
-#' A lookup table for abbreviations commonly used in object names in the ready4costpackage.
+#' A lookup table for abbreviations commonly used in object names in the bimppackage.
 #' 
 #' A tibble
 #' 

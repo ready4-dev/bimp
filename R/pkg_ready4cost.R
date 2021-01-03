@@ -1,8 +1,8 @@
-#' ready4cost: Undertake Budget Impact Analysis on Projets Developped
+#' bimp: Undertake Budget Impact Analysis on Projets Developped
 #' with the Ready4 Suite
 #'
 #' Tools for undertaking budget impact analyses for
-#' mental health projects.  This development version of the ready4cost
+#' mental health projects.  This development version of the bimp
 #' package has been made available as part of the process of testing and
 #' documenting the package. The tools contained in this development
 #' release automate a number of tasks which MODIFY THE DIRECTORY
@@ -15,7 +15,7 @@
 #' therefore quite rudimentary. Human authored documentation will follow
 #' in 2021.
 #'
-#' To learn more about ready4cost, start with the vignettes:
-#' `browseVignettes(package = "ready4cost")`
+#' To learn more about bimp, start with the vignettes:
+#' `browseVignettes(package = "bimp")`
 #'
 "_PACKAGE"

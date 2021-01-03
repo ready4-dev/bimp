@@ -1,6 +1,6 @@
-#' ready4cost function documentation table
+#' bimp function documentation table
 #' 
-#' Meta-data on each ready4cost function used to create package documentation
+#' Meta-data on each bimp function used to create package documentation
 #' 
 #' A tibble
 #' 
@@ -16,5 +16,5 @@
 #'   \item{file_nm_chr}{File name (a character vector)}
 #'   \item{file_pfx_chr}{File prefix (a character vector)}
 #' }
-#' @source \url{https://ready4-dev.github.io/ready4cost/}
+#' @source \url{https://ready4-dev.github.io/bimp/}
 "fns_dmt_tb"

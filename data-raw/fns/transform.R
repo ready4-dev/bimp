@@ -46,6 +46,8 @@ transform_inp_data_for_ress_calcs <- function(input_data_ls){
 }
 transform_inp_ls_for_analysis <- function(input_data_ls,
                                           OOS_buffer_prop_dbl = 0.1){
+  input_data_ls$resource_use_tb <- input_data_ls$resource_use_tb %>%
+    dplyr::filter(Proportion_Each_Timeframe_dbl > 0)
   tfd_input_data_ls <- input_data_ls %>%
     transform_inp_data_for_ress_calcs() %>%
     add_main_calcs_tb(OOS_buffer_prop_dbl = OOS_buffer_prop_dbl) %>%
