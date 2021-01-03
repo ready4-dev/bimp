@@ -1,3 +1,26 @@
+#' Make cf resource
+#' @description make_cf_resc_tb() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make cf resource tibble. The function returns Cf resource (a tibble).
+#' @param cf_data_ls Cf data (a list)
+#' @param resources_tb Resources (a tibble)
+#' @param OOS_buffer_prop_dbl Occasion of service buffer prop (a double vector), Default: 0.1
+#' @return Cf resource (a tibble)
+#' @rdname make_cf_resc_tb
+#' @export 
+#' @importFrom dplyr inner_join select
+#' @keywords internal
+make_cf_resc_tb <- function (cf_data_ls, resources_tb, OOS_buffer_prop_dbl = 0.1) 
+{
+    cf_data_curr_ls <- cf_data_ls %>% transform_inp_ls_for_analysis(OOS_buffer_prop_dbl = OOS_buffer_prop_dbl)
+    cf_data_one_wte_ls <- cf_data_ls
+    cf_data_one_wte_ls$resources_tb$Unit_Qty_dbl <- 1
+    cf_data_one_wte_ls <- cf_data_one_wte_ls %>% transform_inp_ls_for_analysis(OOS_buffer_prop_dbl = OOS_buffer_prop_dbl)
+    cf_resc_tb <- dplyr::inner_join(cf_data_curr_ls$resc_occupcy_tb %>% 
+        dplyr::select(Resource_UID_chr, OOS_serviced_demand_dbl), 
+        cf_data_one_wte_ls$resc_occupcy_tb %>% dplyr::select(Resource_UID_chr, 
+            OOS_resource_occupancy_dbl)) %>% bind_resource_tbs(resources_tb = resources_tb, 
+        simple_outp_1L_lgl = F)
+    return(cf_resc_tb)
+}
 #' Make expenditure summ
 #' @description make_expenditure_summ_tb() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make expenditure summ tibble. The function is called for its side effects and does not return a value.
 #' @param input_data_ls Input data (a list)
@@ -27,4 +50,31 @@ make_expenditure_summ_tb <- function (input_data_ls, incld_areas_ls, area_var_nm
                 n_ress_var_nm_1L_chr = n_ress_var_nm_1L_chr, 
                 unit_cost_var_nm_1L_chr = unit_cost_var_nm_1L_chr))
     })
+}
+#' Make resource use
+#' @description make_resource_use_df() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make resource use data.frame. The function returns Resource use (a data.frame).
+#' @param input_data_ls Input data (a list)
+#' @return Resource use (a data.frame)
+#' @rdname make_resource_use_df
+#' @export 
+#' @importFrom dplyr mutate
+#' @importFrom purrr map_chr
+#' @importFrom ready4fun get_from_lup_obj
+#' @keywords internal
+make_resource_use_df <- function (input_data_ls) 
+{
+    resource_use_df <- input_data_ls$resource_use_tb %>% dplyr::mutate(Intervention = purrr::map_chr(Intervention_UID_chr, 
+        ~ready4fun::get_from_lup_obj(input_data_ls$interventions_tb, 
+            match_value_xx = .x, match_var_nm_1L_chr = "Intervention_UID_chr", 
+            target_var_nm_1L_chr = "Intervention_Name_chr", evaluate_lgl = F)[1])) %>% 
+        dplyr::mutate(Recipient = purrr::map_chr(Recipient_UID_chr, 
+            ~ready4fun::get_from_lup_obj(input_data_ls$recipients_tb, 
+                match_value_xx = .x, match_var_nm_1L_chr = "Recipient_UID_chr", 
+                target_var_nm_1L_chr = "Team_chr", evaluate_lgl = F)[1])) %>% 
+        dplyr::mutate(Proportion_Using_Service = paste0(round(Proportion_Each_Timeframe_dbl * 
+            100, 2))) %>% dplyr::mutate(Resource = purrr::map_chr(Resource_UID_chr, 
+        ~ready4fun::get_from_lup_obj(input_data_ls$resources_tb, 
+            match_value_xx = .x, match_var_nm_1L_chr = "Resource_UID_chr", 
+            target_var_nm_1L_chr = "Role_Category_chr", evaluate_lgl = F)[1]))
+    return(resource_use_df)
 }

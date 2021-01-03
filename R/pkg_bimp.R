@@ -2,8 +2,8 @@
 #' with the Ready4 Suite
 #'
 #' Tools for undertaking budget impact analyses for
-#' mental health projects.  This development version of the bimp
-#' package has been made available as part of the process of testing and
+#' mental health projects.  This development version of the bimp package
+#' has been made available as part of the process of testing and
 #' documenting the package. The tools contained in this development
 #' release automate a number of tasks which MODIFY THE DIRECTORY
 #' STRUCTURE OF YOUR LOCAL MACHINE.  Therefore you should only trial this

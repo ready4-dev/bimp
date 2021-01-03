@@ -18,3 +18,5 @@
 ^data-raw/gnrcs/generics\.R$
 ^data-raw/fns/bind\.R$
 ^data-raw/fns/remove\.R$
+^data-raw/fns/format\.R$
+^data-raw/fns/print\.R$

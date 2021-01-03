@@ -4,12 +4,14 @@
 \alias{bind_resource_tbs}
 \title{Bind resource tibbles}
 \usage{
-bind_resource_tbs(res_use_tb, resources_tb)
+bind_resource_tbs(tfd_res_use_tb, resources_tb, simple_outp_1L_lgl = T)
 }
 \arguments{
-\item{res_use_tb}{Res use (a tibble)}
+\item{tfd_res_use_tb}{Transformed res use (a tibble)}
 
 \item{resources_tb}{Resources (a tibble)}
+
+\item{simple_outp_1L_lgl}{Simple output (a logical vector of length one), Default: T}
 }
 \value{
 Joined (a tibble)

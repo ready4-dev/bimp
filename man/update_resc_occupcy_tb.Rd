@@ -4,15 +4,19 @@
 \alias{update_resc_occupcy_tb}
 \title{Update resource occupancy}
 \usage{
-update_resc_occupcy_tb(resc_occupcy_tb)
+update_resc_occupcy_tb(resc_occupcy_tb, resources_tb, simple_outp_1L_lgl = T)
 }
 \arguments{
 \item{resc_occupcy_tb}{Resource occupancy (a tibble)}
+
+\item{resources_tb}{Resources (a tibble)}
+
+\item{simple_outp_1L_lgl}{Simple output (a logical vector of length one), Default: T}
 }
 \value{
 Resource occupancy (a tibble)
 }
 \description{
-update_resc_occupcy_tb() is an Update function that edits an object, while preserving core object attributes. Specifically, this function implements an algorithm to update resource occupancy tibble. Function argument resc_occupcy_tb specifies the object to be updated. The function returns Resource occupancy (a tibble).
+update_resc_occupcy_tb() is an Update function that edits an object, while preserving core object attributes. Specifically, this function implements an algorithm to update resource occupancy tibble. Function argument resc_occupcy_tb specifies the object to be updated. Argument resources_tb provides the object to be updated. The function returns Resource occupancy (a tibble).
 }
 \keyword{internal}
