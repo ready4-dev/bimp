@@ -72,6 +72,7 @@ print_recpts_tb <- function (recipients_tb, caption_1L_chr = "Player groups of i
 #' Print resource occupancy
 #' @description print_resc_occupcy_tb() is a Print function that prints output to console Specifically, this function implements an algorithm to print resource occupancy tibble. The function is called for its side effects and does not return a value.
 #' @param resc_occupcy_tb Resource occupancy (a tibble)
+#' @param resources_tb Resources (a tibble)
 #' @param caption_1L_chr Caption (a character vector of length one), Default: 'Resource occupancy and proportion of demand met (predicted from current input data)'
 #' @param mkdn_tbl_ref_1L_chr Mkdn table reference (a character vector of length one), Default: 'tab:metneed'
 #' @param output_type_1L_chr Output type (a character vector of length one), Default: 'HTML'
@@ -80,10 +81,10 @@ print_recpts_tb <- function (recipients_tb, caption_1L_chr = "Player groups of i
 #' @export 
 #' @importFrom ready4show print_table
 #' @keywords internal
-print_resc_occupcy_tb <- function (resc_occupcy_tb, caption_1L_chr = "Resource occupancy and proportion of demand met (predicted from current input data)", 
+print_resc_occupcy_tb <- function (resc_occupcy_tb, resources_tb, caption_1L_chr = "Resource occupancy and proportion of demand met (predicted from current input data)", 
     mkdn_tbl_ref_1L_chr = "tab:metneed", output_type_1L_chr = "HTML") 
 {
-    resc_occupcy_tb %>% update_resc_occupcy_tb(resources_tb = nat_data_ls$resources_tb) %>% 
+    resc_occupcy_tb %>% update_resc_occupcy_tb(resources_tb = resources_tb) %>% 
         format_bound_resc_tb() %>% remove_col_nms_obj_sfcs(complete_cases_1L_lgl = T) %>% 
         ready4show::print_table(output_type_1L_chr = output_type_1L_chr, 
             caption_1L_chr = "Resource occupancy and proportion of demand met (predicted from current input data)", 
@@ -141,8 +142,9 @@ print_resources_df <- function (resources_df, caption_1L_chr = "Resource types",
             big_mark_1L_chr = " ", footnotes_chr = "")
 }
 #' Transform resource occupancy
-#' @description transform_resc_occupcy_tb() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform resource occupancy tibble. Function argument resc_occupcy_tb specifies the object to be updated. The function returns Resource occupancy (a tibble).
+#' @description transform_resc_occupcy_tb() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform resource occupancy tibble. Function argument resc_occupcy_tb specifies the object to be updated. Argument resources_tb provides the object to be updated. The function returns Resource occupancy (a tibble).
 #' @param resc_occupcy_tb Resource occupancy (a tibble)
+#' @param resources_tb Resources (a tibble)
 #' @return Resource occupancy (a tibble)
 #' @rdname transform_resc_occupcy_tb
 #' @export 
@@ -150,7 +152,7 @@ print_resources_df <- function (resources_df, caption_1L_chr = "Resource types",
 #' @importFrom purrr map_chr
 #' @importFrom stringr str_replace
 #' @keywords internal
-transform_resc_occupcy_tb <- function (resc_occupcy_tb) 
+transform_resc_occupcy_tb <- function (resc_occupcy_tb, resources_tb) 
 {
     resc_occupcy_tb <- resc_occupcy_tb %>% dplyr::select(Resource_UID_chr, 
         OOS_resource_occupancy_dbl, OOS_serviced_demand_dbl) %>% 
@@ -158,6 +160,6 @@ transform_resc_occupcy_tb <- function (resc_occupcy_tb)
             100, 2), " %") %>% purrr::map_chr(~stringr::str_replace(.x, 
             "Inf %", ""))) %>% dplyr::mutate(Demand_Met = paste0(round(OOS_serviced_demand_dbl * 
         100, 2), " %")) %>% dplyr::select(-OOS_resource_occupancy_dbl, 
-        -OOS_serviced_demand_dbl) %>% bind_resource_tbs(resources_tb = nat_data_ls$resources_tb)
+        -OOS_serviced_demand_dbl) %>% bind_resource_tbs(resources_tb = resources_tb)
     return(resc_occupcy_tb)
 }

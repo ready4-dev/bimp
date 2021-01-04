@@ -6,6 +6,7 @@
 \usage{
 print_resc_occupcy_tb(
   resc_occupcy_tb,
+  resources_tb,
  
     caption_1L_chr = "Resource occupancy and proportion of demand met (predicted from current input data)",
   mkdn_tbl_ref_1L_chr = "tab:metneed",
@@ -14,6 +15,8 @@ print_resc_occupcy_tb(
 }
 \arguments{
 \item{resc_occupcy_tb}{Resource occupancy (a tibble)}
+
+\item{resources_tb}{Resources (a tibble)}
 
 \item{caption_1L_chr}{Caption (a character vector of length one), Default: 'Resource occupancy and proportion of demand met (predicted from current input data)'}
 

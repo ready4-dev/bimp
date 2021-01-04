@@ -42,11 +42,12 @@ print_recpts_tb <- function(recipients_tb,
                             footnotes_chr = "")
 }
 print_resc_occupcy_tb <- function(resc_occupcy_tb,
+                                  resources_tb,
                                   caption_1L_chr = "Resource occupancy and proportion of demand met (predicted from current input data)",
                                   mkdn_tbl_ref_1L_chr = "tab:metneed",
                                   output_type_1L_chr = "HTML"){
   resc_occupcy_tb  %>%
-    update_resc_occupcy_tb(resources_tb = nat_data_ls$resources_tb) %>%
+    update_resc_occupcy_tb(resources_tb = resources_tb) %>%
     format_bound_resc_tb() %>%
     remove_col_nms_obj_sfcs(complete_cases_1L_lgl = T) %>%
     ready4show::print_table(output_type_1L_chr = output_type_1L_chr,
@@ -88,12 +89,13 @@ print_resource_use_df <- function(resource_use_df,
                             mkdn_tbl_ref_1L_chr = "tab:resuse",
                             footnotes_chr = "")
 }
-transform_resc_occupcy_tb <- function(resc_occupcy_tb){
+transform_resc_occupcy_tb <- function(resc_occupcy_tb,
+                                      resources_tb){
   resc_occupcy_tb <- resc_occupcy_tb  %>%
     dplyr::select(Resource_UID_chr, OOS_resource_occupancy_dbl,	OOS_serviced_demand_dbl) %>%
     dplyr::mutate(Resource_Use = paste0(round(OOS_resource_occupancy_dbl * 100,2), " %") %>% purrr::map_chr(~stringr::str_replace(.x,"Inf %", ""))) %>%
     dplyr::mutate(Demand_Met = paste0(round(OOS_serviced_demand_dbl * 100,2), " %")) %>%
     dplyr::select(-OOS_resource_occupancy_dbl,	-OOS_serviced_demand_dbl) %>%
-    bind_resource_tbs(resources_tb = nat_data_ls$resources_tb)
+    bind_resource_tbs(resources_tb = resources_tb)
   return(resc_occupcy_tb)
 }

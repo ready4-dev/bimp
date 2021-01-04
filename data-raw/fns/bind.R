@@ -20,11 +20,11 @@ bind_tbs_in_input_ls <- function(bc_ls,
                                  cf_ls){
   combined_ls <- 1:length(bc_ls) %>% purrr::map(~{
     if(nrow(cf_ls[[.x]]) == 0){
-      combined_ls <- bc_ls
+      combined_tb <- bc_ls[[.x]]
     }else{
-      combined_ls <- ready4fun::add_lups(bc_ls[[.x]], new_lup = cf_ls[[.x]], key_var_nm_1L_chr = names(cf_ls[[.x]])[1], priority_lup_for_dupls = "new")
+      combined_tb <- ready4fun::add_lups(bc_ls[[.x]], new_lup = cf_ls[[.x]], key_var_nm_1L_chr = names(cf_ls[[.x]])[1], priority_lup_for_dupls = "new")
     }
-    combined_ls
-  })
+    combined_tb
+  }) %>% stats::setNames(names(bc_ls))
   return(combined_ls)
 }
