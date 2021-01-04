@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Update main calcs with met dmd — update_main_calcs_with_met_dmd • bimp</title>
+<title>Make cf resource — make_cf_resc_tb • bimp</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Update main calcs with met dmd — update_main_calcs_with_met_dmd" />
-<meta property="og:description" content="update_main_calcs_with_met_dmd() is an Update function that edits an object, while preserving core object attributes. Specifically, this function implements an algorithm to update main calcs with met dmd. Function argument input_data_ls specifies the object to be updated. The function returns Input data (a list)." />
+<meta property="og:title" content="Make cf resource — make_cf_resc_tb" />
+<meta property="og:description" content="make_cf_resc_tb() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make cf resource tibble. The function returns Cf resource (a tibble)." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -119,29 +119,37 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Update main calcs with met dmd</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ready4-dev/bimp/blob/master/R/fn_update.R'><code>R/fn_update.R</code></a></small>
-    <div class="hidden name"><code>update_main_calcs_with_met_dmd.Rd</code></div>
+    <h1>Make cf resource</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ready4-dev/bimp/blob/master/R/fn_make.R'><code>R/fn_make.R</code></a></small>
+    <div class="hidden name"><code>make_cf_resc_tb.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>update_main_calcs_with_met_dmd() is an Update function that edits an object, while preserving core object attributes. Specifically, this function implements an algorithm to update main calcs with met dmd. Function argument input_data_ls specifies the object to be updated. The function returns Input data (a list).</p>
+    <p>make_cf_resc_tb() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make cf resource tibble. The function returns Cf resource (a tibble).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>update_main_calcs_with_met_dmd</span><span class='op'>(</span><span class='va'>input_data_ls</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>make_cf_resc_tb</span><span class='op'>(</span><span class='va'>cf_data_ls</span>, <span class='va'>resources_tb</span>, OOS_buffer_prop_dbl <span class='op'>=</span> <span class='fl'>0.1</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>input_data_ls</th>
-      <td><p>Input data (a list)</p></td>
+      <th>cf_data_ls</th>
+      <td><p>Cf data (a list)</p></td>
+    </tr>
+    <tr>
+      <th>resources_tb</th>
+      <td><p>Resources (a tibble)</p></td>
+    </tr>
+    <tr>
+      <th>OOS_buffer_prop_dbl</th>
+      <td><p>Occasion of service buffer prop (a double vector), Default: 0.1</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Input data (a list)</p>
+    <p>Cf resource (a tibble)</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

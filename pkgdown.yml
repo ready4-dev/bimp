@@ -2,6 +2,6 @@ pandoc: 2.7.3
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
-  ready4cost: ready4cost.html
-last_built: 2021-01-03T23:53Z
+  bimp: bimp.html
+last_built: 2021-01-04T00:12Z
 
