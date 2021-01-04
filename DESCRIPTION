@@ -1,7 +1,7 @@
 Package: bimp
 Title: Undertake Budget Impact Analysis on Projets Developped
     with the Ready4 Suite
-Version: 0.0.0.9010
+Version: 0.0.0.9011
 Authors@R: 
     c(person(given = "Matthew",
              family = "Hamilton",
@@ -39,12 +39,12 @@ Imports:
     testthat,
     knitr,
     ready4fun (>= 0.0.0.9268),
+    ready4show (>= 0.0.0.9005),
     dplyr,
     magrittr,
     methods,
     purrr,
     readxl,
-    ready4show,
     rlang,
     stats,
     stringr,
@@ -53,4 +53,5 @@ VignetteBuilder: knitr
 Depends: 
     R (>= 2.10)
 Remotes: 
-    ready4-dev/ready4fun
+    ready4-dev/ready4fun,
+    ready4-dev/ready4show
