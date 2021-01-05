@@ -4,6 +4,7 @@
 #' @param caption_1L_chr Caption (a character vector of length one), Default: 'Predicted Expenditure'
 #' @param mkdn_tbl_ref_1L_chr Mkdn table reference (a character vector of length one), Default: 'tab:exptst'
 #' @param output_type_1L_chr Output type (a character vector of length one), Default: 'HTML'
+#' @param use_rdocx_1L_lgl Use rdocx (a logical vector of length one), Default: T
 #' @return NULL
 #' @rdname print_expdr_summ_tb
 #' @export 
@@ -11,14 +12,16 @@
 #' @importFrom ready4show print_table
 #' @keywords internal
 print_expdr_summ_tb <- function (expdr_summ_tb, caption_1L_chr = "Predicted Expenditure", 
-    mkdn_tbl_ref_1L_chr = "tab:exptst", output_type_1L_chr = "HTML") 
+    mkdn_tbl_ref_1L_chr = "tab:exptst", output_type_1L_chr = "HTML", 
+    use_rdocx_1L_lgl = T) 
 {
     expdr_summ_tb %>% dplyr::mutate(Annual_Cost = format(Expenditure_dbl, 
         big.mark = " ")) %>% dplyr::select(-Expenditure_dbl) %>% 
         remove_col_nms_obj_sfcs(complete_cases_1L_lgl = T) %>% 
         ready4show::print_table(output_type_1L_chr = output_type_1L_chr, 
-            caption_1L_chr = "Predicted Expenditure", mkdn_tbl_ref_1L_chr = "tab:exptst", 
-            footnotes_chr = "", big_mark_1L_chr = " ")
+            use_rdocx_1L_lgl = use_rdocx_1L_lgl, caption_1L_chr = "Predicted Expenditure", 
+            mkdn_tbl_ref_1L_chr = "tab:exptst", footnotes_chr = "", 
+            big_mark_1L_chr = " ")
 }
 #' Print intvs
 #' @description print_intvs_df() is a Print function that prints output to console Specifically, this function implements an algorithm to print intvs data.frame. The function is called for its side effects and does not return a value.
@@ -26,6 +29,7 @@ print_expdr_summ_tb <- function (expdr_summ_tb, caption_1L_chr = "Predicted Expe
 #' @param caption_1L_chr Caption (a character vector of length one), Default: 'Included mental health interventions'
 #' @param mkdn_tbl_ref_1L_chr Mkdn table reference (a character vector of length one), Default: 'tab:intvs'
 #' @param output_type_1L_chr Output type (a character vector of length one), Default: 'HTML'
+#' @param use_rdocx_1L_lgl Use rdocx (a logical vector of length one), Default: T
 #' @return NULL
 #' @rdname print_intvs_df
 #' @export 
@@ -33,7 +37,8 @@ print_expdr_summ_tb <- function (expdr_summ_tb, caption_1L_chr = "Predicted Expe
 #' @importFrom ready4show print_table
 #' @keywords internal
 print_intvs_df <- function (intvs_df, caption_1L_chr = "Included mental health interventions", 
-    mkdn_tbl_ref_1L_chr = "tab:intvs", output_type_1L_chr = "HTML") 
+    mkdn_tbl_ref_1L_chr = "tab:intvs", output_type_1L_chr = "HTML", 
+    use_rdocx_1L_lgl = T) 
 {
     intvs_df %>% dplyr::select(-Intervention_UID_chr, -Domain_UID_chr, 
         -Intervention_Cat_UID_chr, -Discipline_UID_chr, -Role_Cat_UID_chr, 
@@ -45,8 +50,8 @@ print_intvs_df <- function (intvs_df, caption_1L_chr = "Included mental health i
             "Provider only" ~ "No client interaction", T ~ Intervention_Format_chr)) %>% 
         remove_col_nms_obj_sfcs(complete_cases_1L_lgl = T) %>% 
         ready4show::print_table(output_type_1L_chr = output_type_1L_chr, 
-            caption_1L_chr = caption_1L_chr, mkdn_tbl_ref_1L_chr = mkdn_tbl_ref_1L_chr, 
-            footnotes_chr = "")
+            use_rdocx_1L_lgl = use_rdocx_1L_lgl, caption_1L_chr = caption_1L_chr, 
+            mkdn_tbl_ref_1L_chr = mkdn_tbl_ref_1L_chr, footnotes_chr = "")
 }
 #' Print recpts
 #' @description print_recpts_tb() is a Print function that prints output to console Specifically, this function implements an algorithm to print recpts tibble. The function is called for its side effects and does not return a value.
@@ -54,6 +59,7 @@ print_intvs_df <- function (intvs_df, caption_1L_chr = "Included mental health i
 #' @param caption_1L_chr Caption (a character vector of length one), Default: 'Player groups of interest'
 #' @param mkdn_tbl_ref_1L_chr Mkdn table reference (a character vector of length one), Default: 'tab:pgps'
 #' @param output_type_1L_chr Output type (a character vector of length one), Default: 'HTML'
+#' @param use_rdocx_1L_lgl Use rdocx (a logical vector of length one), Default: F
 #' @return NULL
 #' @rdname print_recpts_tb
 #' @export 
@@ -61,13 +67,14 @@ print_intvs_df <- function (intvs_df, caption_1L_chr = "Included mental health i
 #' @importFrom ready4show print_table
 #' @keywords internal
 print_recpts_tb <- function (recipients_tb, caption_1L_chr = "Player groups of interest", 
-    mkdn_tbl_ref_1L_chr = "tab:pgps", output_type_1L_chr = "HTML") 
+    mkdn_tbl_ref_1L_chr = "tab:pgps", output_type_1L_chr = "HTML", 
+    use_rdocx_1L_lgl = F) 
 {
     recipients_tb %>% dplyr::select(-Recipient_UID_chr, -Recipient_Type_chr, 
         -Location_UID_chr, -Age_Band_chr, -Note_chr) %>% remove_col_nms_obj_sfcs(complete_cases_1L_lgl = T) %>% 
         ready4show::print_table(output_type_1L_chr = output_type_1L_chr, 
-            caption_1L_chr = caption_1L_chr, mkdn_tbl_ref_1L_chr = mkdn_tbl_ref_1L_chr, 
-            footnotes_chr = "")
+            use_rdocx_1L_lgl = use_rdocx_1L_lgl, caption_1L_chr = caption_1L_chr, 
+            mkdn_tbl_ref_1L_chr = mkdn_tbl_ref_1L_chr, footnotes_chr = "")
 }
 #' Print resource occupancy
 #' @description print_resc_occupcy_tb() is a Print function that prints output to console Specifically, this function implements an algorithm to print resource occupancy tibble. The function is called for its side effects and does not return a value.
@@ -76,18 +83,20 @@ print_recpts_tb <- function (recipients_tb, caption_1L_chr = "Player groups of i
 #' @param caption_1L_chr Caption (a character vector of length one), Default: 'Resource occupancy and proportion of demand met (predicted from current input data)'
 #' @param mkdn_tbl_ref_1L_chr Mkdn table reference (a character vector of length one), Default: 'tab:metneed'
 #' @param output_type_1L_chr Output type (a character vector of length one), Default: 'HTML'
+#' @param use_rdocx_1L_lgl Use rdocx (a logical vector of length one), Default: T
 #' @return NULL
 #' @rdname print_resc_occupcy_tb
 #' @export 
 #' @importFrom ready4show print_table
 #' @keywords internal
 print_resc_occupcy_tb <- function (resc_occupcy_tb, resources_tb, caption_1L_chr = "Resource occupancy and proportion of demand met (predicted from current input data)", 
-    mkdn_tbl_ref_1L_chr = "tab:metneed", output_type_1L_chr = "HTML") 
+    mkdn_tbl_ref_1L_chr = "tab:metneed", output_type_1L_chr = "HTML", 
+    use_rdocx_1L_lgl = T) 
 {
     resc_occupcy_tb %>% update_resc_occupcy_tb(resources_tb = resources_tb) %>% 
         format_bound_resc_tb() %>% remove_col_nms_obj_sfcs(complete_cases_1L_lgl = T) %>% 
         ready4show::print_table(output_type_1L_chr = output_type_1L_chr, 
-            caption_1L_chr = "Resource occupancy and proportion of demand met (predicted from current input data)", 
+            use_rdocx_1L_lgl = use_rdocx_1L_lgl, caption_1L_chr = "Resource occupancy and proportion of demand met (predicted from current input data)", 
             mkdn_tbl_ref_1L_chr = "tab:metneed")
 }
 #' Print resource use
@@ -96,6 +105,7 @@ print_resc_occupcy_tb <- function (resc_occupcy_tb, resources_tb, caption_1L_chr
 #' @param caption_1L_chr Caption (a character vector of length one), Default: 'Resource use'
 #' @param mkdn_tbl_ref_1L_chr Mkdn table reference (a character vector of length one), Default: 'tab:resuse'
 #' @param output_type_1L_chr Output type (a character vector of length one), Default: 'HTML'
+#' @param use_rdocx_1L_lgl Use rdocx (a logical vector of length one), Default: T
 #' @return NULL
 #' @rdname print_resource_use_df
 #' @export 
@@ -103,15 +113,15 @@ print_resc_occupcy_tb <- function (resc_occupcy_tb, resources_tb, caption_1L_chr
 #' @importFrom ready4show print_table
 #' @keywords internal
 print_resource_use_df <- function (resource_use_df, caption_1L_chr = "Resource use", mkdn_tbl_ref_1L_chr = "tab:resuse", 
-    output_type_1L_chr = "HTML") 
+    output_type_1L_chr = "HTML", use_rdocx_1L_lgl = T) 
 {
     resource_use_df %>% dplyr::select(-Intervention_UID_chr, 
         -Recipient_UID_chr, -Proportion_Each_Timeframe_dbl, -Resource_UID_chr) %>% 
         dplyr::rename(`Player Group` = Recipient, `Usage (percent)` = Proportion_Using_Service) %>% 
         remove_col_nms_obj_sfcs(complete_cases_1L_lgl = T) %>% 
         ready4show::print_table(output_type_1L_chr = output_type_1L_chr, 
-            caption_1L_chr = "Resource use", mkdn_tbl_ref_1L_chr = "tab:resuse", 
-            footnotes_chr = "")
+            use_rdocx_1L_lgl = use_rdocx_1L_lgl, caption_1L_chr = "Resource use", 
+            mkdn_tbl_ref_1L_chr = "tab:resuse", footnotes_chr = "")
 }
 #' Print resources
 #' @description print_resources_df() is a Print function that prints output to console Specifically, this function implements an algorithm to print resources data.frame. The function is called for its side effects and does not return a value.
@@ -119,6 +129,7 @@ print_resource_use_df <- function (resource_use_df, caption_1L_chr = "Resource u
 #' @param caption_1L_chr Caption (a character vector of length one), Default: 'Resource types'
 #' @param mkdn_tbl_ref_1L_chr Mkdn table reference (a character vector of length one), Default: 'tab:restypes'
 #' @param output_type_1L_chr Output type (a character vector of length one), Default: 'HTML'
+#' @param use_rdocx_1L_lgl Use rdocx (a logical vector of length one), Default: T
 #' @return NULL
 #' @rdname print_resources_df
 #' @export 
@@ -126,7 +137,7 @@ print_resource_use_df <- function (resource_use_df, caption_1L_chr = "Resource u
 #' @importFrom ready4show print_table
 #' @keywords internal
 print_resources_df <- function (resources_df, caption_1L_chr = "Resource types", mkdn_tbl_ref_1L_chr = "tab:restypes", 
-    output_type_1L_chr = "HTML") 
+    output_type_1L_chr = "HTML", use_rdocx_1L_lgl = T) 
 {
     resources_df %>% dplyr::select(Discipline_chr, Role_Category_chr, 
         Recipient_STE_chr, Recipient_Sex_chr, Unit_Measure_chr, 
@@ -138,28 +149,7 @@ print_resources_df <- function (resources_df, caption_1L_chr = "Resource types",
             Quantity = Unit_Qty_dbl, `Weekly Non-Service Hours` = Non_OOS_Weekly_Hours_Per_Unit_dbl) %>% 
         remove_col_nms_obj_sfcs(complete_cases_1L_lgl = T) %>% 
         ready4show::print_table(output_type_1L_chr = output_type_1L_chr, 
-            caption_1L_chr = caption_1L_chr, mkdn_tbl_ref_1L_chr = mkdn_tbl_ref_1L_chr, 
-            big_mark_1L_chr = " ", footnotes_chr = "")
-}
-#' Transform resource occupancy
-#' @description transform_resc_occupcy_tb() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform resource occupancy tibble. Function argument resc_occupcy_tb specifies the object to be updated. Argument resources_tb provides the object to be updated. The function returns Resource occupancy (a tibble).
-#' @param resc_occupcy_tb Resource occupancy (a tibble)
-#' @param resources_tb Resources (a tibble)
-#' @return Resource occupancy (a tibble)
-#' @rdname transform_resc_occupcy_tb
-#' @export 
-#' @importFrom dplyr select mutate
-#' @importFrom purrr map_chr
-#' @importFrom stringr str_replace
-#' @keywords internal
-transform_resc_occupcy_tb <- function (resc_occupcy_tb, resources_tb) 
-{
-    resc_occupcy_tb <- resc_occupcy_tb %>% dplyr::select(Resource_UID_chr, 
-        OOS_resource_occupancy_dbl, OOS_serviced_demand_dbl) %>% 
-        dplyr::mutate(Resource_Use = paste0(round(OOS_resource_occupancy_dbl * 
-            100, 2), " %") %>% purrr::map_chr(~stringr::str_replace(.x, 
-            "Inf %", ""))) %>% dplyr::mutate(Demand_Met = paste0(round(OOS_serviced_demand_dbl * 
-        100, 2), " %")) %>% dplyr::select(-OOS_resource_occupancy_dbl, 
-        -OOS_serviced_demand_dbl) %>% bind_resource_tbs(resources_tb = resources_tb)
-    return(resc_occupcy_tb)
+            use_rdocx_1L_lgl = use_rdocx_1L_lgl, caption_1L_chr = caption_1L_chr, 
+            mkdn_tbl_ref_1L_chr = mkdn_tbl_ref_1L_chr, big_mark_1L_chr = " ", 
+            footnotes_chr = "")
 }

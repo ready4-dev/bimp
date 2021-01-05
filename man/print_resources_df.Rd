@@ -8,7 +8,8 @@ print_resources_df(
   resources_df,
   caption_1L_chr = "Resource types",
   mkdn_tbl_ref_1L_chr = "tab:restypes",
-  output_type_1L_chr = "HTML"
+  output_type_1L_chr = "HTML",
+  use_rdocx_1L_lgl = T
 )
 }
 \arguments{
@@ -19,6 +20,8 @@ print_resources_df(
 \item{mkdn_tbl_ref_1L_chr}{Mkdn table reference (a character vector of length one), Default: 'tab:restypes'}
 
 \item{output_type_1L_chr}{Output type (a character vector of length one), Default: 'HTML'}
+
+\item{use_rdocx_1L_lgl}{Use rdocx (a logical vector of length one), Default: T}
 }
 \description{
 print_resources_df() is a Print function that prints output to console Specifically, this function implements an algorithm to print resources data.frame. The function is called for its side effects and does not return a value.

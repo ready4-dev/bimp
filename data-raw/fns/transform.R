@@ -116,3 +116,13 @@ transform_to_clone_nat_dmd <- function(input_data_ls,
     dplyr::distinct()
   return(input_data_ls)
 }
+transform_resc_occupcy_tb <- function(resc_occupcy_tb,
+                                      resources_tb){
+  resc_occupcy_tb <- resc_occupcy_tb  %>%
+    dplyr::select(Resource_UID_chr, OOS_resource_occupancy_dbl,	OOS_serviced_demand_dbl) %>%
+    dplyr::mutate(Resource_Use = paste0(round(OOS_resource_occupancy_dbl * 100,2), " %") %>% purrr::map_chr(~stringr::str_replace(.x,"Inf %", ""))) %>%
+    dplyr::mutate(Demand_Met = paste0(round(OOS_serviced_demand_dbl * 100,2), " %")) %>%
+    dplyr::select(-OOS_resource_occupancy_dbl,	-OOS_serviced_demand_dbl) %>%
+    bind_resource_tbs(resources_tb = resources_tb)
+  return(resc_occupcy_tb)
+}

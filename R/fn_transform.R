@@ -88,6 +88,28 @@ transform_inp_ls_for_analysis <- function (input_data_ls, OOS_buffer_prop_dbl = 
         add_resc_occupcy_tb() %>% update_main_calcs_with_met_dmd()
     return(tfd_input_data_ls)
 }
+#' Transform resource occupancy
+#' @description transform_resc_occupcy_tb() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform resource occupancy tibble. Function argument resc_occupcy_tb specifies the object to be updated. Argument resources_tb provides the object to be updated. The function returns Resource occupancy (a tibble).
+#' @param resc_occupcy_tb Resource occupancy (a tibble)
+#' @param resources_tb Resources (a tibble)
+#' @return Resource occupancy (a tibble)
+#' @rdname transform_resc_occupcy_tb
+#' @export 
+#' @importFrom dplyr select mutate
+#' @importFrom purrr map_chr
+#' @importFrom stringr str_replace
+#' @keywords internal
+transform_resc_occupcy_tb <- function (resc_occupcy_tb, resources_tb) 
+{
+    resc_occupcy_tb <- resc_occupcy_tb %>% dplyr::select(Resource_UID_chr, 
+        OOS_resource_occupancy_dbl, OOS_serviced_demand_dbl) %>% 
+        dplyr::mutate(Resource_Use = paste0(round(OOS_resource_occupancy_dbl * 
+            100, 2), " %") %>% purrr::map_chr(~stringr::str_replace(.x, 
+            "Inf %", ""))) %>% dplyr::mutate(Demand_Met = paste0(round(OOS_serviced_demand_dbl * 
+        100, 2), " %")) %>% dplyr::select(-OOS_resource_occupancy_dbl, 
+        -OOS_serviced_demand_dbl) %>% bind_resource_tbs(resources_tb = resources_tb)
+    return(resc_occupcy_tb)
+}
 #' Transform to clone nat dmd
 #' @description transform_to_clone_nat_dmd() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform to clone nat dmd. Function argument input_data_ls specifies the object to be updated. Argument clone_ls provides the object to be updated. The function returns Input data (a list).
 #' @param input_data_ls Input data (a list)

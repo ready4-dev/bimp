@@ -8,7 +8,8 @@ print_resource_use_df(
   resource_use_df,
   caption_1L_chr = "Resource use",
   mkdn_tbl_ref_1L_chr = "tab:resuse",
-  output_type_1L_chr = "HTML"
+  output_type_1L_chr = "HTML",
+  use_rdocx_1L_lgl = T
 )
 }
 \arguments{
@@ -19,6 +20,8 @@ print_resource_use_df(
 \item{mkdn_tbl_ref_1L_chr}{Mkdn table reference (a character vector of length one), Default: 'tab:resuse'}
 
 \item{output_type_1L_chr}{Output type (a character vector of length one), Default: 'HTML'}
+
+\item{use_rdocx_1L_lgl}{Use rdocx (a logical vector of length one), Default: T}
 }
 \description{
 print_resource_use_df() is a Print function that prints output to console Specifically, this function implements an algorithm to print resource use data.frame. The function is called for its side effects and does not return a value.

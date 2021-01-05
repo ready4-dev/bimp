@@ -8,7 +8,8 @@ print_intvs_df(
   intvs_df,
   caption_1L_chr = "Included mental health interventions",
   mkdn_tbl_ref_1L_chr = "tab:intvs",
-  output_type_1L_chr = "HTML"
+  output_type_1L_chr = "HTML",
+  use_rdocx_1L_lgl = T
 )
 }
 \arguments{
@@ -19,6 +20,8 @@ print_intvs_df(
 \item{mkdn_tbl_ref_1L_chr}{Mkdn table reference (a character vector of length one), Default: 'tab:intvs'}
 
 \item{output_type_1L_chr}{Output type (a character vector of length one), Default: 'HTML'}
+
+\item{use_rdocx_1L_lgl}{Use rdocx (a logical vector of length one), Default: T}
 }
 \description{
 print_intvs_df() is a Print function that prints output to console Specifically, this function implements an algorithm to print intvs data.frame. The function is called for its side effects and does not return a value.
