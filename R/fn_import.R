@@ -8,7 +8,6 @@
 #' @importFrom readxl read_xlsx
 #' @importFrom dplyr rename_with
 #' @importFrom stats setNames
-#' @keywords internal
 import_input_data <- function (path_to_data_1L_chr) 
 {
     data_items_chr <- c("Interventions", "Locations", "Recipients", 

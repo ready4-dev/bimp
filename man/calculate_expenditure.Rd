@@ -29,4 +29,3 @@ Expenditure (a double vector of length one)
 \description{
 calculate_expenditure() is a Calculate function that calculates a numeric value. Specifically, this function implements an algorithm to calculate expenditure. The function returns Expenditure (a double vector of length one).
 }
-\keyword{internal}

@@ -40,15 +40,17 @@ print_intvs_df <- function (intvs_df, caption_1L_chr = "Included mental health i
     mkdn_tbl_ref_1L_chr = "tab:intvs", output_type_1L_chr = "HTML", 
     use_rdocx_1L_lgl = T) 
 {
+    intvs_df <- intvs_df %>% dplyr::select(c(names(intvs_df)[1:10], 
+        names(intvs_df)[12], names(intvs_df)[11], names(intvs_df)[13:14]))
     intvs_df %>% dplyr::select(-Intervention_UID_chr, -Domain_UID_chr, 
         -Intervention_Cat_UID_chr, -Discipline_UID_chr, -Role_Cat_UID_chr, 
         -Location_chr) %>% dplyr::rename(Quantity = N_OOS_Per_Episode_dbl, 
-        `Duration (mins)` = Duration_OOS_Mins_dbl, Timeframe = Timeframe_In_Weeks_chr) %>% 
+        `Duration (mins)` = Duration_OOS_Mins_dbl, Timeframe = Timeframe_In_Weeks_chr, 
+        Activity = Intervention_Name_chr, Format = Intervention_Format_chr) %>% 
         dplyr::select(-Domain_chr, -Intervention_Category_chr) %>% 
-        dplyr::mutate(Intervention_Format_chr = dplyr::case_when(Intervention_Format_chr == 
-            "F2F" ~ "Face to face", Intervention_Format_chr == 
-            "Provider only" ~ "No client interaction", T ~ Intervention_Format_chr)) %>% 
-        remove_col_nms_obj_sfcs(complete_cases_1L_lgl = T) %>% 
+        dplyr::mutate(Format = dplyr::case_when(Format == "F2F" ~ 
+            "Face to face", Format == "Provider only" ~ "Desk", 
+            T ~ Format)) %>% remove_col_nms_obj_sfcs(complete_cases_1L_lgl = T) %>% 
         ready4show::print_table(output_type_1L_chr = output_type_1L_chr, 
             use_rdocx_1L_lgl = use_rdocx_1L_lgl, caption_1L_chr = caption_1L_chr, 
             mkdn_tbl_ref_1L_chr = mkdn_tbl_ref_1L_chr, footnotes_chr = "")
@@ -59,7 +61,7 @@ print_intvs_df <- function (intvs_df, caption_1L_chr = "Included mental health i
 #' @param caption_1L_chr Caption (a character vector of length one), Default: 'Player groups of interest'
 #' @param mkdn_tbl_ref_1L_chr Mkdn table reference (a character vector of length one), Default: 'tab:pgps'
 #' @param output_type_1L_chr Output type (a character vector of length one), Default: 'HTML'
-#' @param use_rdocx_1L_lgl Use rdocx (a logical vector of length one), Default: F
+#' @param use_rdocx_1L_lgl Use rdocx (a logical vector of length one), Default: T
 #' @return NULL
 #' @rdname print_recpts_tb
 #' @export 
@@ -68,7 +70,7 @@ print_intvs_df <- function (intvs_df, caption_1L_chr = "Included mental health i
 #' @keywords internal
 print_recpts_tb <- function (recipients_tb, caption_1L_chr = "Player groups of interest", 
     mkdn_tbl_ref_1L_chr = "tab:pgps", output_type_1L_chr = "HTML", 
-    use_rdocx_1L_lgl = F) 
+    use_rdocx_1L_lgl = T) 
 {
     recipients_tb %>% dplyr::select(-Recipient_UID_chr, -Recipient_Type_chr, 
         -Location_UID_chr, -Age_Band_chr, -Note_chr) %>% remove_col_nms_obj_sfcs(complete_cases_1L_lgl = T) %>% 
@@ -117,7 +119,8 @@ print_resource_use_df <- function (resource_use_df, caption_1L_chr = "Resource u
 {
     resource_use_df %>% dplyr::select(-Intervention_UID_chr, 
         -Recipient_UID_chr, -Proportion_Each_Timeframe_dbl, -Resource_UID_chr) %>% 
-        dplyr::rename(`Player Group` = Recipient, `Usage (percent)` = Proportion_Using_Service) %>% 
+        dplyr::rename(Activity = Intervention, `Team Group` = Recipient, 
+            `Usage (percent)` = Proportion_Using_Service) %>% 
         remove_col_nms_obj_sfcs(complete_cases_1L_lgl = T) %>% 
         ready4show::print_table(output_type_1L_chr = output_type_1L_chr, 
             use_rdocx_1L_lgl = use_rdocx_1L_lgl, caption_1L_chr = "Resource use", 

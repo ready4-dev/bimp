@@ -9,7 +9,7 @@ print_recpts_tb(
   caption_1L_chr = "Player groups of interest",
   mkdn_tbl_ref_1L_chr = "tab:pgps",
   output_type_1L_chr = "HTML",
-  use_rdocx_1L_lgl = F
+  use_rdocx_1L_lgl = T
 )
 }
 \arguments{
@@ -21,7 +21,7 @@ print_recpts_tb(
 
 \item{output_type_1L_chr}{Output type (a character vector of length one), Default: 'HTML'}
 
-\item{use_rdocx_1L_lgl}{Use rdocx (a logical vector of length one), Default: F}
+\item{use_rdocx_1L_lgl}{Use rdocx (a logical vector of length one), Default: T}
 }
 \description{
 print_recpts_tb() is a Print function that prints output to console Specifically, this function implements an algorithm to print recpts tibble. The function is called for its side effects and does not return a value.

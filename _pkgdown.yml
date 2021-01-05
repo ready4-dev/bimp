@@ -6,3 +6,7 @@ reference:
   - abbreviations_lup
   - fn_type_lup_tb
   - fns_dmt_tb
+- title: "Functions"
+- contents:
+  - calculate_expenditure
+  - import_input_data

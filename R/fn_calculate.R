@@ -10,7 +10,6 @@
 #' @export 
 #' @importFrom dplyr filter pull
 #' @importFrom rlang sym
-#' @keywords internal
 calculate_expenditure <- function (resources_tb, incld_areas_chr = NA_character_, area_var_nm_1L_chr = "Recipient_STE_chr", 
     n_ress_var_nm_1L_chr = "Unit_Qty_dbl", unit_cost_var_nm_1L_chr = "Unit_Cost_Dollars_dbl") 
 {
