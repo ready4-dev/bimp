@@ -6,7 +6,7 @@
 \usage{
 print_recpts_tb(
   recipients_tb,
-  caption_1L_chr = "Player groups of interest",
+  caption_1L_chr = "Team groups",
   mkdn_tbl_ref_1L_chr = "tab:pgps",
   output_type_1L_chr = "HTML",
   use_rdocx_1L_lgl = T
@@ -15,7 +15,7 @@ print_recpts_tb(
 \arguments{
 \item{recipients_tb}{Recipients (a tibble)}
 
-\item{caption_1L_chr}{Caption (a character vector of length one), Default: 'Player groups of interest'}
+\item{caption_1L_chr}{Caption (a character vector of length one), Default: 'Team groups'}
 
 \item{mkdn_tbl_ref_1L_chr}{Mkdn table reference (a character vector of length one), Default: 'tab:pgps'}
 

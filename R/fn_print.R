@@ -58,7 +58,7 @@ print_intvs_df <- function (intvs_df, caption_1L_chr = "Included mental health i
 #' Print recpts
 #' @description print_recpts_tb() is a Print function that prints output to console Specifically, this function implements an algorithm to print recpts tibble. The function is called for its side effects and does not return a value.
 #' @param recipients_tb Recipients (a tibble)
-#' @param caption_1L_chr Caption (a character vector of length one), Default: 'Player groups of interest'
+#' @param caption_1L_chr Caption (a character vector of length one), Default: 'Team groups'
 #' @param mkdn_tbl_ref_1L_chr Mkdn table reference (a character vector of length one), Default: 'tab:pgps'
 #' @param output_type_1L_chr Output type (a character vector of length one), Default: 'HTML'
 #' @param use_rdocx_1L_lgl Use rdocx (a logical vector of length one), Default: T
@@ -68,9 +68,8 @@ print_intvs_df <- function (intvs_df, caption_1L_chr = "Included mental health i
 #' @importFrom dplyr select
 #' @importFrom ready4show print_table
 #' @keywords internal
-print_recpts_tb <- function (recipients_tb, caption_1L_chr = "Player groups of interest", 
-    mkdn_tbl_ref_1L_chr = "tab:pgps", output_type_1L_chr = "HTML", 
-    use_rdocx_1L_lgl = T) 
+print_recpts_tb <- function (recipients_tb, caption_1L_chr = "Team groups", mkdn_tbl_ref_1L_chr = "tab:pgps", 
+    output_type_1L_chr = "HTML", use_rdocx_1L_lgl = T) 
 {
     recipients_tb %>% dplyr::select(-Recipient_UID_chr, -Recipient_Type_chr, 
         -Location_UID_chr, -Age_Band_chr, -Note_chr) %>% remove_col_nms_obj_sfcs(complete_cases_1L_lgl = T) %>% 

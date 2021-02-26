@@ -71,6 +71,7 @@ update_resc_use_tb_for_gndr_diffs <- function (resource_use_tb, fem_uids_chr = "
         new_male_data_dbl[1], Recipient_UID_chr %in% male_uids_chr & 
         round(Proportion_Each_Timeframe_dbl, get_nbr_of_decimals(original_male_data_dbl[2])) == 
             original_male_data_dbl[2] ~ new_male_data_dbl[2], 
-        T ~ Proportion_Each_Timeframe_dbl))
+        T ~ Proportion_Each_Timeframe_dbl)) %>% dplyr::mutate(Proportion_Using_Service = paste0(round(Proportion_Each_Timeframe_dbl * 
+        100, 2)))
     return(resource_use_tb)
 }

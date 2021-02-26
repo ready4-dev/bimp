@@ -40,8 +40,6 @@ Useful links:
 Other contributors:
 \itemize{
   \item Orygen [copyright holder, funder]
-  \item Headspace [funder]
-  \item National Health and Medical Research Council [funder]
 }
 
 }
