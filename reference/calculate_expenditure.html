@@ -47,7 +47,7 @@
 
 
 <meta property="og:title" content="Calculate expenditure — calculate_expenditure" />
-<meta property="og:description" content="calculate_expenditure() is a Calculate function that calculates a numeric value. Specifically, this function implements an algorithm to calculate expenditure. The function returns Expenditure (a double vector of length one)." />
+<meta property="og:description" content="calculate_expenditure() is a Calculate function that performs a numeric calculation. Specifically, this function implements an algorithm to calculate expenditure. The function returns Expenditure (a double vector of length one)." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bimp</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.0.0.9017</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.0.0.9018</span>
       </span>
     </div>
 
@@ -125,14 +125,14 @@
     </div>
 
     <div class="ref-description">
-    <p>calculate_expenditure() is a Calculate function that calculates a numeric value. Specifically, this function implements an algorithm to calculate expenditure. The function returns Expenditure (a double vector of length one).</p>
+    <p>calculate_expenditure() is a Calculate function that performs a numeric calculation. Specifically, this function implements an algorithm to calculate expenditure. The function returns Expenditure (a double vector of length one).</p>
     </div>
 
     <pre class="usage"><span class='fu'>calculate_expenditure</span><span class='op'>(</span>
   <span class='va'>resources_tb</span>,
   incld_areas_chr <span class='op'>=</span> <span class='cn'>NA_character_</span>,
   area_var_nm_1L_chr <span class='op'>=</span> <span class='st'>"Recipient_STE_chr"</span>,
-  n_ress_var_nm_1L_chr <span class='op'>=</span> <span class='st'>"Unit_Qty_dbl"</span>,
+  n_rescs__var_nm_1L_chr <span class='op'>=</span> <span class='st'>"Unit_Qty_dbl"</span>,
   unit_cost_var_nm_1L_chr <span class='op'>=</span> <span class='st'>"Unit_Cost_Dollars_dbl"</span>
 <span class='op'>)</span></pre>
 
@@ -145,19 +145,19 @@
     </tr>
     <tr>
       <th>incld_areas_chr</th>
-      <td><p>Incld areas (a character vector), Default: 'NA'</p></td>
+      <td><p>Included areas (a character vector), Default: 'NA'</p></td>
     </tr>
     <tr>
       <th>area_var_nm_1L_chr</th>
-      <td><p>Area var name (a character vector of length one), Default: 'Recipient_STE_chr'</p></td>
+      <td><p>Area variable name (a character vector of length one), Default: 'Recipient_STE_chr'</p></td>
     </tr>
     <tr>
-      <th>n_ress_var_nm_1L_chr</th>
-      <td><p>N ress var name (a character vector of length one), Default: 'Unit_Qty_dbl'</p></td>
+      <th>n_rescs__var_nm_1L_chr</th>
+      <td><p>N resources  variable name (a character vector of length one), Default: 'Unit_Qty_dbl'</p></td>
     </tr>
     <tr>
       <th>unit_cost_var_nm_1L_chr</th>
-      <td><p>Unit cost var name (a character vector of length one), Default: 'Unit_Cost_Dollars_dbl'</p></td>
+      <td><p>Unit cost variable name (a character vector of length one), Default: 'Unit_Cost_Dollars_dbl'</p></td>
     </tr>
     </table>
 

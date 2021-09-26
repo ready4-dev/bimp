@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Print resource occupancy tibble — print_resc_occupcy_tb • bimp</title>
+<title>Make expenditure summary tibble — make_expenditure_smry_tb • bimp</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Print resource occupancy tibble — print_resc_occupcy_tb" />
-<meta property="og:description" content="print_resc_occupcy_tb() is a Print function that prints output to console Specifically, this function implements an algorithm to print resource occupancy tibble. The function is called for its side effects and does not return a value." />
+<meta property="og:title" content="Make expenditure summary tibble — make_expenditure_smry_tb" />
+<meta property="og:description" content="make_expenditure_smry_tb() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make expenditure summary tibble. The function is called for its side effects and does not return a value." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -119,51 +119,45 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Print resource occupancy tibble</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ready4-dev/bimp/blob/master/R/fn_print.R'><code>R/fn_print.R</code></a></small>
-    <div class="hidden name"><code>print_resc_occupcy_tb.Rd</code></div>
+    <h1>Make expenditure summary tibble</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ready4-dev/bimp/blob/master/R/fn_make.R'><code>R/fn_make.R</code></a></small>
+    <div class="hidden name"><code>make_expenditure_smry_tb.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>print_resc_occupcy_tb() is a Print function that prints output to console Specifically, this function implements an algorithm to print resource occupancy tibble. The function is called for its side effects and does not return a value.</p>
+    <p>make_expenditure_smry_tb() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make expenditure summary tibble. The function is called for its side effects and does not return a value.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>print_resc_occupcy_tb</span><span class='op'>(</span>
-  <span class='va'>resc_occupcy_tb</span>,
-  <span class='va'>resources_tb</span>,
- 
-    caption_1L_chr <span class='op'>=</span> <span class='st'>"Resource occupancy and proportion of demand met (predicted from current input data)"</span>,
-  mkdn_tbl_ref_1L_chr <span class='op'>=</span> <span class='st'>"tab:metneed"</span>,
-  output_type_1L_chr <span class='op'>=</span> <span class='st'>"HTML"</span>,
-  use_rdocx_1L_lgl <span class='op'>=</span> <span class='cn'>T</span>
+    <pre class="usage"><span class='fu'>make_expenditure_smry_tb</span><span class='op'>(</span>
+  <span class='va'>input_data_ls</span>,
+  <span class='va'>incld_areas_ls</span>,
+  area_var_nm_1L_chr <span class='op'>=</span> <span class='st'>"Recipient_STE_chr"</span>,
+  n_rescs__var_nm_1L_chr <span class='op'>=</span> <span class='st'>"Unit_Qty_dbl"</span>,
+  unit_cost_var_nm_1L_chr <span class='op'>=</span> <span class='st'>"Unit_Cost_Dollars_dbl"</span>
 <span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>resc_occupcy_tb</th>
-      <td><p>Resource occupancy (a tibble)</p></td>
+      <th>input_data_ls</th>
+      <td><p>Input data (a list)</p></td>
     </tr>
     <tr>
-      <th>resources_tb</th>
-      <td><p>Resources (a tibble)</p></td>
+      <th>incld_areas_ls</th>
+      <td><p>Included areas (a list)</p></td>
     </tr>
     <tr>
-      <th>caption_1L_chr</th>
-      <td><p>Caption (a character vector of length one), Default: 'Resource occupancy and proportion of demand met (predicted from current input data)'</p></td>
+      <th>area_var_nm_1L_chr</th>
+      <td><p>Area variable name (a character vector of length one), Default: 'Recipient_STE_chr'</p></td>
     </tr>
     <tr>
-      <th>mkdn_tbl_ref_1L_chr</th>
-      <td><p>Markdown table reference (a character vector of length one), Default: 'tab:metneed'</p></td>
+      <th>n_rescs__var_nm_1L_chr</th>
+      <td><p>N resources  variable name (a character vector of length one), Default: 'Unit_Qty_dbl'</p></td>
     </tr>
     <tr>
-      <th>output_type_1L_chr</th>
-      <td><p>Output type (a character vector of length one), Default: 'HTML'</p></td>
-    </tr>
-    <tr>
-      <th>use_rdocx_1L_lgl</th>
-      <td><p>Use rdocx (a logical vector of length one), Default: T</p></td>
+      <th>unit_cost_var_nm_1L_chr</th>
+      <td><p>Unit cost variable name (a character vector of length one), Default: 'Unit_Cost_Dollars_dbl'</p></td>
     </tr>
     </table>
 
