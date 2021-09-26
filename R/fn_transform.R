@@ -123,7 +123,7 @@ transform_resc_occupcy_tb <- function (resc_occupcy_tb, resources_tb)
 #' @return Input data (a list)
 #' @rdname transform_to_clone_nat_dmd
 #' @export 
-#' @importFrom purrr map2_dfr map_dfr
+#' @importFrom purrr map2_dfr map_chr map_dfr
 #' @importFrom dplyr filter mutate bind_rows select distinct
 #' @importFrom ready4fun get_from_lup_obj
 #' @keywords internal
@@ -140,10 +140,11 @@ transform_to_clone_nat_dmd <- function (input_data_ls, clone_ls = list(AUS_SNR_F
         ~{
             template_1L_chr <- .y
             template_tb <- alt_inp_data_ls$resource_use_tb %>% 
-                dplyr::filter(Recipient_UID_chr == .y) %>% dplyr::mutate(Discipline_UID_chr = ready4fun::get_from_lup_obj(alt_inp_data_ls$resources_tb, 
-                match_var_nm_1L_chr = "Resource_UID_chr", match_value_xx = Resource_UID_chr, 
-                target_var_nm_1L_chr = "Discipline_UID_chr", 
-                evaluate_lgl = F))
+                dplyr::filter(Recipient_UID_chr == .y) %>% dplyr::mutate(Discipline_UID_chr = Resource_UID_chr %>% 
+                purrr::map_chr(~ready4fun::get_from_lup_obj(alt_inp_data_ls$resources_tb, 
+                  match_var_nm_1L_chr = "Resource_UID_chr", match_value_xx = .x, 
+                  target_var_nm_1L_chr = "Discipline_UID_chr", 
+                  evaluate_lgl = F)))
             recipients_chr <- .x
             new_tb <- purrr::map_dfr(recipients_chr, ~{
                 state_1L_chr <- ready4fun::get_from_lup_obj(alt_inp_data_ls$recipients_tb, 
@@ -155,7 +156,7 @@ transform_to_clone_nat_dmd <- function (input_data_ls, clone_ls = list(AUS_SNR_F
                     match_var_nm_1L_chr = "Location_UID_chr", 
                     match_value_xx = state_1L_chr, target_var_nm_1L_chr = "STE_chr", 
                     evaluate_lgl = F) %>% ready4fun::get_from_lup_obj(data_lookup_tb = alt_inp_data_ls$resources_tb %>% 
-                    dplyr::filter(Discipline_UID_chr == template_tb$Discipline_UID_chr, 
+                    dplyr::filter(Discipline_UID_chr %in% unique(template_tb$Discipline_UID_chr), 
                       Recipient_Sex_chr == ready4fun::get_from_lup_obj(alt_inp_data_ls$recipients_tb, 
                         match_var_nm_1L_chr = "Recipient_UID_chr", 
                         match_value_xx = template_1L_chr, target_var_nm_1L_chr = "Sex_chr", 
