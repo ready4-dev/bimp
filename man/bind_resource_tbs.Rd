@@ -4,10 +4,10 @@
 \alias{bind_resource_tbs}
 \title{Bind resource tibbles}
 \usage{
-bind_resource_tbs(tfd_res_use_tb, resources_tb, simple_outp_1L_lgl = T)
+bind_resource_tbs(tfd_resc_use__tb, resources_tb, simple_outp_1L_lgl = T)
 }
 \arguments{
-\item{tfd_res_use_tb}{Transformed res use (a tibble)}
+\item{tfd_resc_use__tb}{Transformed resource use (a tibble)}
 
 \item{resources_tb}{Resources (a tibble)}
 
@@ -17,6 +17,6 @@ bind_resource_tbs(tfd_res_use_tb, resources_tb, simple_outp_1L_lgl = T)
 Joined (a tibble)
 }
 \description{
-bind_resource_tbs() is a Bind function that binds two instances of a data-frame type class together. Specifically, this function implements an algorithm to bind resource tibbles. The function returns Joined (a tibble).
+bind_resource_tbs() is a Bind function that binds two objects together to create a composite object. Specifically, this function implements an algorithm to bind resource tibbles. The function returns Joined (a tibble).
 }
 \keyword{internal}

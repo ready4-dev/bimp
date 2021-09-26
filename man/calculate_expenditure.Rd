@@ -8,24 +8,24 @@ calculate_expenditure(
   resources_tb,
   incld_areas_chr = NA_character_,
   area_var_nm_1L_chr = "Recipient_STE_chr",
-  n_ress_var_nm_1L_chr = "Unit_Qty_dbl",
+  n_rescs__var_nm_1L_chr = "Unit_Qty_dbl",
   unit_cost_var_nm_1L_chr = "Unit_Cost_Dollars_dbl"
 )
 }
 \arguments{
 \item{resources_tb}{Resources (a tibble)}
 
-\item{incld_areas_chr}{Incld areas (a character vector), Default: 'NA'}
+\item{incld_areas_chr}{Included areas (a character vector), Default: 'NA'}
 
-\item{area_var_nm_1L_chr}{Area var name (a character vector of length one), Default: 'Recipient_STE_chr'}
+\item{area_var_nm_1L_chr}{Area variable name (a character vector of length one), Default: 'Recipient_STE_chr'}
 
-\item{n_ress_var_nm_1L_chr}{N ress var name (a character vector of length one), Default: 'Unit_Qty_dbl'}
+\item{n_rescs__var_nm_1L_chr}{N resources  variable name (a character vector of length one), Default: 'Unit_Qty_dbl'}
 
-\item{unit_cost_var_nm_1L_chr}{Unit cost var name (a character vector of length one), Default: 'Unit_Cost_Dollars_dbl'}
+\item{unit_cost_var_nm_1L_chr}{Unit cost variable name (a character vector of length one), Default: 'Unit_Cost_Dollars_dbl'}
 }
 \value{
 Expenditure (a double vector of length one)
 }
 \description{
-calculate_expenditure() is a Calculate function that calculates a numeric value. Specifically, this function implements an algorithm to calculate expenditure. The function returns Expenditure (a double vector of length one).
+calculate_expenditure() is a Calculate function that performs a numeric calculation. Specifically, this function implements an algorithm to calculate expenditure. The function returns Expenditure (a double vector of length one).
 }

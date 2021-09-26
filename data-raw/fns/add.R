@@ -11,7 +11,7 @@ add_main_calcs_tb <- function(input_data_ls,
     dplyr::mutate(Indications_dbl = Proportion_Each_Timeframe_dbl * Count_dbl)  %>%
     dplyr::left_join(input_data_ls$interventions_tb, by = "Intervention_UID_chr") %>%
     dplyr::left_join(input_data_ls$resources_tb, by = "Resource_UID_chr") %>%
-    update_intv_recps_per_OOS() %>%
+    update_intv_rcps_per_OOS() %>%
     add_n_epsds_per_yr() %>%
     add_n_OOS_per_yr() %>%
     add_OOS_mins_per_yr(OOS_buffer_prop_dbl = OOS_buffer_prop_dbl) %>%

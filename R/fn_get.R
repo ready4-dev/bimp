@@ -15,9 +15,9 @@ get_clone_targets <- function (input_data_ls, Sex_1L_chr = "F", Target_1L_chr = 
         dplyr::pull(Recipient_UID_chr)
     return(clone_targets_chr)
 }
-#' Get nbr of decimals
-#' @description get_nbr_of_decimals() is a Get function that retrieves a pre-existing data object from memory, local file system or online repository. Specifically, this function implements an algorithm to get nbr of decimals. Function argument nbr_1L_dbl specifies the where to look for the required object. The function is called for its side effects and does not return a value.
-#' @param nbr_1L_dbl Nbr (a double vector of length one)
+#' Get number of decimals
+#' @description get_nbr_of_decimals() is a Get function that retrieves a pre-existing data object from memory, local file system or online repository. Specifically, this function implements an algorithm to get number of decimals. Function argument nbr_1L_dbl specifies the where to look for the required object. The function is called for its side effects and does not return a value.
+#' @param nbr_1L_dbl Number (a double vector of length one)
 #' @return NULL
 #' @rdname get_nbr_of_decimals
 #' @export 

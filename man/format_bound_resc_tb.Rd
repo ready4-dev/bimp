@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_format.R
 \name{format_bound_resc_tb}
 \alias{format_bound_resc_tb}
-\title{Format bound resource}
+\title{Format bound resource tibble}
 \usage{
 format_bound_resc_tb(bound_resc_tb, simple_outp_1L_lgl = T)
 }
@@ -15,6 +15,6 @@ format_bound_resc_tb(bound_resc_tb, simple_outp_1L_lgl = T)
 Bound resource (a tibble)
 }
 \description{
-format_bound_resc_tb() is a Format function that binds two instances of a data-frame type class together. Specifically, this function implements an algorithm to format bound resource tibble. The function returns Bound resource (a tibble).
+format_bound_resc_tb() is a Format function that modifies the format of an output. Specifically, this function implements an algorithm to format bound resource tibble. The function returns Bound resource (a tibble).
 }
 \keyword{internal}

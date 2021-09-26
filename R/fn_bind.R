@@ -1,6 +1,6 @@
 #' Bind resource tibbles
-#' @description bind_resource_tbs() is a Bind function that binds two instances of a data-frame type class together. Specifically, this function implements an algorithm to bind resource tibbles. The function returns Joined (a tibble).
-#' @param tfd_res_use_tb Transformed res use (a tibble)
+#' @description bind_resource_tbs() is a Bind function that binds two objects together to create a composite object. Specifically, this function implements an algorithm to bind resource tibbles. The function returns Joined (a tibble).
+#' @param tfd_resc_use__tb Transformed resource use (a tibble)
 #' @param resources_tb Resources (a tibble)
 #' @param simple_outp_1L_lgl Simple output (a logical vector of length one), Default: T
 #' @return Joined (a tibble)
@@ -8,9 +8,9 @@
 #' @export 
 #' @importFrom dplyr left_join select rename mutate
 #' @keywords internal
-bind_resource_tbs <- function (tfd_res_use_tb, resources_tb, simple_outp_1L_lgl = T) 
+bind_resource_tbs <- function (tfd_resc_use__tb, resources_tb, simple_outp_1L_lgl = T) 
 {
-    joined_tb <- tfd_res_use_tb %>% dplyr::left_join(resources_tb %>% 
+    joined_tb <- tfd_resc_use__tb %>% dplyr::left_join(resources_tb %>% 
         dplyr::select(Resource_UID_chr, Role_Category_chr, Recipient_STE_chr, 
             Recipient_Sex_chr, Unit_Cost_Dollars_dbl, Unit_Qty_dbl)) %>% 
         dplyr::select(Role_Category_chr, Recipient_STE_chr, Recipient_Sex_chr, 
@@ -27,10 +27,10 @@ bind_resource_tbs <- function (tfd_res_use_tb, resources_tb, simple_outp_1L_lgl 
         -Unit_Qty_dbl)
     return(joined_tb)
 }
-#' Bind tibbles in input
-#' @description bind_tbs_in_input_ls() is a Bind function that binds two instances of a data-frame type class together. Specifically, this function implements an algorithm to bind tibbles in input list. The function returns Combined (a list).
+#' Bind tibbles in input list
+#' @description bind_tbs_in_input_ls() is a Bind function that binds two objects together to create a composite object. Specifically, this function implements an algorithm to bind tibbles in input list. The function returns Combined (a list).
 #' @param bc_ls Bc (a list)
-#' @param cf_ls Cf (a list)
+#' @param cf_ls Counter-factual (a list)
 #' @return Combined (a list)
 #' @rdname bind_tbs_in_input_ls
 #' @export 
@@ -46,7 +46,7 @@ bind_tbs_in_input_ls <- function (bc_ls, cf_ls)
         }
         else {
             combined_tb <- ready4fun::add_lups(bc_ls[[.x]], new_lup = cf_ls[[.x]], 
-                key_var_nm_1L_chr = names(cf_ls[[.x]])[1], priority_lup_for_dupls = "new")
+                key_var_nm_1L_chr = names(cf_ls[[.x]])[1], priority_lup_for_dupls_1L_chr = "new")
         }
         combined_tb
     }) %>% stats::setNames(names(bc_ls))

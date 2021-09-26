@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_update.R
 \name{update_main_calcs_with_met_dmd}
 \alias{update_main_calcs_with_met_dmd}
-\title{Update main calcs with met dmd}
+\title{Update main calculations with met demand}
 \usage{
 update_main_calcs_with_met_dmd(input_data_ls)
 }
@@ -13,6 +13,6 @@ update_main_calcs_with_met_dmd(input_data_ls)
 Input data (a list)
 }
 \description{
-update_main_calcs_with_met_dmd() is an Update function that edits an object, while preserving core object attributes. Specifically, this function implements an algorithm to update main calcs with met dmd. Function argument input_data_ls specifies the object to be updated. The function returns Input data (a list).
+update_main_calcs_with_met_dmd() is an Update function that edits an object, while preserving core object attributes. Specifically, this function implements an algorithm to update main calculations with met demand. Function argument input_data_ls specifies the object to be updated. The function returns Input data (a list).
 }
 \keyword{internal}

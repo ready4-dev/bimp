@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_update.R
 \name{update_resc_use_tb_for_gndr_diffs}
 \alias{update_resc_use_tb_for_gndr_diffs}
-\title{Update resource use tibble for gndr diffs}
+\title{Update resource use tibble for gender differences}
 \usage{
 update_resc_use_tb_for_gndr_diffs(
   resource_use_tb,
@@ -17,13 +17,13 @@ update_resc_use_tb_for_gndr_diffs(
 \arguments{
 \item{resource_use_tb}{Resource use (a tibble)}
 
-\item{fem_uids_chr}{Fem uids (a character vector), Default: 'AUS_SNR_F'}
+\item{fem_uids_chr}{Female unique identifiers (a character vector), Default: 'AUS_SNR_F'}
 
-\item{male_uids_chr}{Male uids (a character vector), Default: 'AUS_SNR_M'}
+\item{male_uids_chr}{Male unique identifiers (a character vector), Default: 'AUS_SNR_M'}
 
-\item{original_fem_data_dbl}{Original fem data (a double vector), Default: c(0.2, 0.26666667)}
+\item{original_fem_data_dbl}{Original female data (a double vector), Default: c(0.2, 0.26666667)}
 
-\item{new_fem_data_dbl}{New fem data (a double vector), Default: c(0.398, 0.306)}
+\item{new_fem_data_dbl}{New female data (a double vector), Default: c(0.398, 0.306)}
 
 \item{original_male_data_dbl}{Original male data (a double vector), Default: c(0.2, 0.21428571)}
 
@@ -33,6 +33,6 @@ update_resc_use_tb_for_gndr_diffs(
 Resource use (a tibble)
 }
 \description{
-update_resc_use_tb_for_gndr_diffs() is an Update function that edits an object, while preserving core object attributes. Specifically, this function implements an algorithm to update resource use tibble for gndr diffs. Function argument resource_use_tb specifies the object to be updated. Argument fem_uids_chr provides the object to be updated. The function returns Resource use (a tibble).
+update_resc_use_tb_for_gndr_diffs() is an Update function that edits an object, while preserving core object attributes. Specifically, this function implements an algorithm to update resource use tibble for gender differences. Function argument resource_use_tb specifies the object to be updated. Argument fem_uids_chr provides the object to be updated. The function returns Resource use (a tibble).
 }
 \keyword{internal}

@@ -2,14 +2,14 @@
 % Please edit documentation in R/fn_get.R
 \name{get_nbr_of_decimals}
 \alias{get_nbr_of_decimals}
-\title{Get nbr of decimals}
+\title{Get number of decimals}
 \usage{
 get_nbr_of_decimals(nbr_1L_dbl)
 }
 \arguments{
-\item{nbr_1L_dbl}{Nbr (a double vector of length one)}
+\item{nbr_1L_dbl}{Number (a double vector of length one)}
 }
 \description{
-get_nbr_of_decimals() is a Get function that retrieves a pre-existing data object from memory, local file system or online repository. Specifically, this function implements an algorithm to get nbr of decimals. Function argument nbr_1L_dbl specifies the where to look for the required object. The function is called for its side effects and does not return a value.
+get_nbr_of_decimals() is a Get function that retrieves a pre-existing data object from memory, local file system or online repository. Specifically, this function implements an algorithm to get number of decimals. Function argument nbr_1L_dbl specifies the where to look for the required object. The function is called for its side effects and does not return a value.
 }
 \keyword{internal}

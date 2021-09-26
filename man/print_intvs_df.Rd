@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_print.R
 \name{print_intvs_df}
 \alias{print_intvs_df}
-\title{Print intvs}
+\title{Print interventions data.frame}
 \usage{
 print_intvs_df(
   intvs_df,
@@ -13,17 +13,17 @@ print_intvs_df(
 )
 }
 \arguments{
-\item{intvs_df}{Intvs (a data.frame)}
+\item{intvs_df}{Interventions (a data.frame)}
 
 \item{caption_1L_chr}{Caption (a character vector of length one), Default: 'Included mental health interventions'}
 
-\item{mkdn_tbl_ref_1L_chr}{Mkdn table reference (a character vector of length one), Default: 'tab:intvs'}
+\item{mkdn_tbl_ref_1L_chr}{Markdown table reference (a character vector of length one), Default: 'tab:intvs'}
 
 \item{output_type_1L_chr}{Output type (a character vector of length one), Default: 'HTML'}
 
 \item{use_rdocx_1L_lgl}{Use rdocx (a logical vector of length one), Default: T}
 }
 \description{
-print_intvs_df() is a Print function that prints output to console Specifically, this function implements an algorithm to print intvs data.frame. The function is called for its side effects and does not return a value.
+print_intvs_df() is a Print function that prints output to console Specifically, this function implements an algorithm to print interventions data.frame. The function is called for its side effects and does not return a value.
 }
 \keyword{internal}

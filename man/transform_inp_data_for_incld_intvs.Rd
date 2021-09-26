@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_transform.R
 \name{transform_inp_data_for_incld_intvs}
 \alias{transform_inp_data_for_incld_intvs}
-\title{Transform input data for incld intvs}
+\title{Transform input data for included interventions}
 \usage{
 transform_inp_data_for_incld_intvs(
   input_data_ls,
@@ -15,18 +15,18 @@ transform_inp_data_for_incld_intvs(
 \arguments{
 \item{input_data_ls}{Input data (a list)}
 
-\item{incld_intvs_cats_chr}{Incld intvs cats (a character vector), Default: 'NA'}
+\item{incld_intvs_cats_chr}{Included interventions cats (a character vector), Default: 'NA'}
 
-\item{incld_intvs_chr}{Incld intvs (a character vector), Default: 'NA'}
+\item{incld_intvs_chr}{Included interventions (a character vector), Default: 'NA'}
 
-\item{intv_uid_var_nm_1L_chr}{Intv uid var name (a character vector of length one), Default: 'Intervention_UID_chr'}
+\item{intv_uid_var_nm_1L_chr}{Intervention unique identifier variable name (a character vector of length one), Default: 'Intervention_UID_chr'}
 
-\item{intv_cat_uid_var_nm_1L_chr}{Intv cat uid var name (a character vector of length one), Default: 'Intervention_Cat_UID_chr'}
+\item{intv_cat_uid_var_nm_1L_chr}{Intervention cat unique identifier variable name (a character vector of length one), Default: 'Intervention_Cat_UID_chr'}
 }
 \value{
 Input data (a list)
 }
 \description{
-transform_inp_data_for_incld_intvs() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform input data for incld intvs. Function argument input_data_ls specifies the object to be updated. Argument incld_intvs_cats_chr provides the object to be updated. The function returns Input data (a list).
+transform_inp_data_for_incld_intvs() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform input data for included interventions. Function argument input_data_ls specifies the object to be updated. Argument incld_intvs_cats_chr provides the object to be updated. The function returns Input data (a list).
 }
 \keyword{internal}

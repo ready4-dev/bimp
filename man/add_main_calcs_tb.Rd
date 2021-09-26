@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_add.R
 \name{add_main_calcs_tb}
 \alias{add_main_calcs_tb}
-\title{Add main calcs}
+\title{Add main calculations tibble}
 \usage{
 add_main_calcs_tb(input_data_ls, OOS_buffer_prop_dbl = 0.1)
 }
@@ -15,6 +15,6 @@ add_main_calcs_tb(input_data_ls, OOS_buffer_prop_dbl = 0.1)
 Input data (a list)
 }
 \description{
-add_main_calcs_tb() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add main calcs tibble. Function argument input_data_ls specifies the object to be updated. The function returns Input data (a list).
+add_main_calcs_tb() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add main calculations tibble. Function argument input_data_ls specifies the object to be updated. The function returns Input data (a list).
 }
 \keyword{internal}

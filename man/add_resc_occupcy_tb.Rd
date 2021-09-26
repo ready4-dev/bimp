@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_add.R
 \name{add_resc_occupcy_tb}
 \alias{add_resc_occupcy_tb}
-\title{Add resource occupancy}
+\title{Add resource occupancy tibble}
 \usage{
 add_resc_occupcy_tb(input_data_ls)
 }

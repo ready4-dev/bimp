@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_add.R
 \name{add_eftv_wkly_hrs}
 \alias{add_eftv_wkly_hrs}
-\title{Add eftv wkly hrs}
+\title{Add effective weekly hours}
 \usage{
 add_eftv_wkly_hrs(resources_tb)
 }
@@ -13,6 +13,6 @@ add_eftv_wkly_hrs(resources_tb)
 Resources (a tibble)
 }
 \description{
-add_eftv_wkly_hrs() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add eftv wkly hrs. Function argument resources_tb specifies the object to be updated. The function returns Resources (a tibble).
+add_eftv_wkly_hrs() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add effective weekly hours. Function argument resources_tb specifies the object to be updated. The function returns Resources (a tibble).
 }
 \keyword{internal}

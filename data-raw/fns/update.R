@@ -1,4 +1,4 @@
-update_intv_recps_per_OOS <- function(main_calcs_tb){
+update_intv_rcps_per_OOS <- function(main_calcs_tb){
   main_calcs_tb <- main_calcs_tb %>%
     dplyr::mutate(Recipients_Per_Episode_dbl = dplyr::case_when(Group_Delivery_lgl ~ Count_dbl,
                                                                 T ~ 1))

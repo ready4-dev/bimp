@@ -1,9 +1,9 @@
-print_expdr_summ_tb <- function(expdr_summ_tb,
+print_expdr_smry_tb <- function(expdr_smry_tb,
                                 caption_1L_chr = "Predicted Expenditure",
                                 mkdn_tbl_ref_1L_chr = "tab:exptst",
                                 output_type_1L_chr = "HTML",
                                 use_rdocx_1L_lgl = T){
-  expdr_summ_tb %>%
+  expdr_smry_tb %>%
     dplyr::mutate(Annual_Cost = format(Expenditure_dbl, big.mark = " ")) %>%
     dplyr::select(-Expenditure_dbl) %>%
     remove_col_nms_obj_sfcs(complete_cases_1L_lgl = T) %>%
@@ -39,7 +39,7 @@ print_intvs_df <- function(intvs_df,
                             mkdn_tbl_ref_1L_chr = mkdn_tbl_ref_1L_chr,
                             footnotes_chr = "")
 }
-print_recpts_tb <- function(recipients_tb,
+print_rcps_tb <- function(recipients_tb,
                             caption_1L_chr = "Team groups",
                             mkdn_tbl_ref_1L_chr = "tab:pgps",
                             output_type_1L_chr = "HTML",

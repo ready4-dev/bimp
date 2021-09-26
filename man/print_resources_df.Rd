@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_print.R
 \name{print_resources_df}
 \alias{print_resources_df}
-\title{Print resources}
+\title{Print resources data.frame}
 \usage{
 print_resources_df(
   resources_df,
@@ -17,7 +17,7 @@ print_resources_df(
 
 \item{caption_1L_chr}{Caption (a character vector of length one), Default: 'Resource types'}
 
-\item{mkdn_tbl_ref_1L_chr}{Mkdn table reference (a character vector of length one), Default: 'tab:restypes'}
+\item{mkdn_tbl_ref_1L_chr}{Markdown table reference (a character vector of length one), Default: 'tab:restypes'}
 
 \item{output_type_1L_chr}{Output type (a character vector of length one), Default: 'HTML'}
 

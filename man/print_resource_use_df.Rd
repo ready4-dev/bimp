@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_print.R
 \name{print_resource_use_df}
 \alias{print_resource_use_df}
-\title{Print resource use}
+\title{Print resource use data.frame}
 \usage{
 print_resource_use_df(
   resource_use_df,
@@ -17,7 +17,7 @@ print_resource_use_df(
 
 \item{caption_1L_chr}{Caption (a character vector of length one), Default: 'Resource use'}
 
-\item{mkdn_tbl_ref_1L_chr}{Mkdn table reference (a character vector of length one), Default: 'tab:resuse'}
+\item{mkdn_tbl_ref_1L_chr}{Markdown table reference (a character vector of length one), Default: 'tab:resuse'}
 
 \item{output_type_1L_chr}{Output type (a character vector of length one), Default: 'HTML'}
 

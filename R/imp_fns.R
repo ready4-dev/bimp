@@ -10,3 +10,14 @@
 #' @param lhs,rhs An object and a function to apply to it
 #' @keywords internal
 NULL
+
+#' Deprecated function
+#'
+#' Import of deprecated function as recommended in lifecycle package documentation.
+#'
+#' @importFrom lifecycle deprecated
+#' @name deprecated
+#' @rdname deprecated
+#' @export
+#' @keywords internal
+NULL

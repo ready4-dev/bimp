@@ -2,19 +2,19 @@
 % Please edit documentation in R/fn_add.R
 \name{add_OOS_mins_per_yr}
 \alias{add_OOS_mins_per_yr}
-\title{Add Occasion of service minutes per yearr}
+\title{Add occasion of service minimums per year}
 \usage{
 add_OOS_mins_per_yr(main_calcs_tb, OOS_buffer_prop_dbl = 0.1)
 }
 \arguments{
-\item{main_calcs_tb}{Main calcs (a tibble)}
+\item{main_calcs_tb}{Main calculations (a tibble)}
 
 \item{OOS_buffer_prop_dbl}{Occasion of service buffer prop (a double vector), Default: 0.1}
 }
 \value{
-Main calcs (a tibble)
+Main calculations (a tibble)
 }
 \description{
-add_OOS_mins_per_yr() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add occasion of service minutes per yearr. Function argument main_calcs_tb specifies the object to be updated. The function returns Main calcs (a tibble).
+add_OOS_mins_per_yr() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add occasion of service minimums per year. Function argument main_calcs_tb specifies the object to be updated. The function returns Main calculations (a tibble).
 }
 \keyword{internal}

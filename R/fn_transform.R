@@ -1,10 +1,10 @@
-#' Transform input data for incld intvs
-#' @description transform_inp_data_for_incld_intvs() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform input data for incld intvs. Function argument input_data_ls specifies the object to be updated. Argument incld_intvs_cats_chr provides the object to be updated. The function returns Input data (a list).
+#' Transform input data for included interventions
+#' @description transform_inp_data_for_incld_intvs() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform input data for included interventions. Function argument input_data_ls specifies the object to be updated. Argument incld_intvs_cats_chr provides the object to be updated. The function returns Input data (a list).
 #' @param input_data_ls Input data (a list)
-#' @param incld_intvs_cats_chr Incld intvs cats (a character vector), Default: 'NA'
-#' @param incld_intvs_chr Incld intvs (a character vector), Default: 'NA'
-#' @param intv_uid_var_nm_1L_chr Intv uid var name (a character vector of length one), Default: 'Intervention_UID_chr'
-#' @param intv_cat_uid_var_nm_1L_chr Intv cat uid var name (a character vector of length one), Default: 'Intervention_Cat_UID_chr'
+#' @param incld_intvs_cats_chr Included interventions cats (a character vector), Default: 'NA'
+#' @param incld_intvs_chr Included interventions (a character vector), Default: 'NA'
+#' @param intv_uid_var_nm_1L_chr Intervention unique identifier variable name (a character vector of length one), Default: 'Intervention_UID_chr'
+#' @param intv_cat_uid_var_nm_1L_chr Intervention cat unique identifier variable name (a character vector of length one), Default: 'Intervention_Cat_UID_chr'
 #' @return Input data (a list)
 #' @rdname transform_inp_data_for_incld_intvs
 #' @export 
@@ -55,15 +55,15 @@ transform_inp_data_for_incld_intvs <- function (input_data_ls, incld_intvs_cats_
     })
     return(input_data_ls)
 }
-#' Transform input data for ress calcs
-#' @description transform_inp_data_for_ress_calcs() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform input data for ress calcs. Function argument input_data_ls specifies the object to be updated. The function returns Input data (a list).
+#' Transform input data for resources  calculations
+#' @description transform_inp_data_for_rescs__calcs() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform input data for resources  calculations. Function argument input_data_ls specifies the object to be updated. The function returns Input data (a list).
 #' @param input_data_ls Input data (a list)
 #' @return Input data (a list)
-#' @rdname transform_inp_data_for_ress_calcs
+#' @rdname transform_inp_data_for_rescs__calcs
 #' @export 
 
 #' @keywords internal
-transform_inp_data_for_ress_calcs <- function (input_data_ls) 
+transform_inp_data_for_rescs__calcs <- function (input_data_ls) 
 {
     input_data_ls$resources_tb <- input_data_ls$resources_tb %>% 
         add_eftv_wkly_hrs() %>% add_meets_non_OOS_wkly_hrs_test() %>% 
@@ -83,12 +83,12 @@ transform_inp_ls_for_analysis <- function (input_data_ls, OOS_buffer_prop_dbl = 
 {
     input_data_ls$resource_use_tb <- input_data_ls$resource_use_tb %>% 
         dplyr::filter(Proportion_Each_Timeframe_dbl > 0)
-    tfd_input_data_ls <- input_data_ls %>% transform_inp_data_for_ress_calcs() %>% 
+    tfd_input_data_ls <- input_data_ls %>% transform_inp_data_for_rescs__calcs() %>% 
         add_main_calcs_tb(OOS_buffer_prop_dbl = OOS_buffer_prop_dbl) %>% 
         add_resc_occupcy_tb() %>% update_main_calcs_with_met_dmd()
     return(tfd_input_data_ls)
 }
-#' Transform resource occupancy
+#' Transform resource occupancy tibble
 #' @description transform_resc_occupcy_tb() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform resource occupancy tibble. Function argument resc_occupcy_tb specifies the object to be updated. Argument resources_tb provides the object to be updated. The function returns Resource occupancy (a tibble).
 #' @param resc_occupcy_tb Resource occupancy (a tibble)
 #' @param resources_tb Resources (a tibble)
@@ -110,16 +110,16 @@ transform_resc_occupcy_tb <- function (resc_occupcy_tb, resources_tb)
         -OOS_serviced_demand_dbl) %>% bind_resource_tbs(resources_tb = resources_tb)
     return(resc_occupcy_tb)
 }
-#' Transform to clone nat dmd
-#' @description transform_to_clone_nat_dmd() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform to clone nat dmd. Function argument input_data_ls specifies the object to be updated. Argument clone_ls provides the object to be updated. The function returns Input data (a list).
+#' Transform to clone nat demand
+#' @description transform_to_clone_nat_dmd() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform to clone nat demand. Function argument input_data_ls specifies the object to be updated. Argument clone_ls provides the object to be updated. The function returns Input data (a list).
 #' @param input_data_ls Input data (a list)
 #' @param clone_ls Clone (a list), Default: list(AUS_SNR_F = get_clone_targets(input_data_ls, Sex_1L_chr = "F", 
 #'    Target_1L_chr = "AUS_SNR_F"), AUS_SNR_M = get_clone_targets(input_data_ls, 
 #'    Sex_1L_chr = "M", Target_1L_chr = "AUS_SNR_M"))
-#' @param incld_intvs_cats_chr Incld intvs cats (a character vector), Default: 'NA'
-#' @param incld_intvs_chr Incld intvs (a character vector), Default: 'NA'
-#' @param intv_uid_var_nm_1L_chr Intv uid var name (a character vector of length one), Default: 'Intervention_UID_chr'
-#' @param intv_cat_uid_var_nm_1L_chr Intv cat uid var name (a character vector of length one), Default: 'Intervention_Cat_UID_chr'
+#' @param incld_intvs_cats_chr Included interventions cats (a character vector), Default: 'NA'
+#' @param incld_intvs_chr Included interventions (a character vector), Default: 'NA'
+#' @param intv_uid_var_nm_1L_chr Intervention unique identifier variable name (a character vector of length one), Default: 'Intervention_UID_chr'
+#' @param intv_cat_uid_var_nm_1L_chr Intervention cat unique identifier variable name (a character vector of length one), Default: 'Intervention_Cat_UID_chr'
 #' @return Input data (a list)
 #' @rdname transform_to_clone_nat_dmd
 #' @export 
@@ -136,7 +136,7 @@ transform_to_clone_nat_dmd <- function (input_data_ls, clone_ls = list(AUS_SNR_F
     alt_inp_data_ls <- transform_inp_data_for_incld_intvs(input_data_ls, 
         incld_intvs_cats_chr = incld_intvs_cats_chr, incld_intvs_chr = incld_intvs_chr, 
         intv_uid_var_nm_1L_chr = intv_uid_var_nm_1L_chr, intv_cat_uid_var_nm_1L_chr = intv_cat_uid_var_nm_1L_chr)
-    addl_res_tb <- purrr::map2_dfr(clone_ls, names(clone_ls), 
+    addl_resc_tb <- purrr::map2_dfr(clone_ls, names(clone_ls), 
         ~{
             template_1L_chr <- .y
             template_tb <- alt_inp_data_ls$resource_use_tb %>% 
@@ -166,7 +166,7 @@ transform_to_clone_nat_dmd <- function (input_data_ls, clone_ls = list(AUS_SNR_F
             new_tb
         })
     input_data_ls$resource_use_tb <- dplyr::bind_rows(input_data_ls$resource_use_tb, 
-        addl_res_tb %>% dplyr::select(-Discipline_UID_chr)) %>% 
+        addl_resc_tb %>% dplyr::select(-Discipline_UID_chr)) %>% 
         dplyr::distinct()
     return(input_data_ls)
 }

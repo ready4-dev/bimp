@@ -2,17 +2,17 @@
 % Please edit documentation in R/fn_add.R
 \name{add_n_OOS_per_yr}
 \alias{add_n_OOS_per_yr}
-\title{Add n Occasion of service per yearr}
+\title{Add n occasion of service per year}
 \usage{
 add_n_OOS_per_yr(main_calcs_tb)
 }
 \arguments{
-\item{main_calcs_tb}{Main calcs (a tibble)}
+\item{main_calcs_tb}{Main calculations (a tibble)}
 }
 \value{
-Main calcs (a tibble)
+Main calculations (a tibble)
 }
 \description{
-add_n_OOS_per_yr() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add n occasion of service per yearr. Function argument main_calcs_tb specifies the object to be updated. The function returns Main calcs (a tibble).
+add_n_OOS_per_yr() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add n occasion of service per year. Function argument main_calcs_tb specifies the object to be updated. The function returns Main calculations (a tibble).
 }
 \keyword{internal}

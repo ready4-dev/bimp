@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_update.R
 \name{update_resc_occupcy_tb}
 \alias{update_resc_occupcy_tb}
-\title{Update resource occupancy}
+\title{Update resource occupancy tibble}
 \usage{
 update_resc_occupcy_tb(resc_occupcy_tb, resources_tb, simple_outp_1L_lgl = T)
 }

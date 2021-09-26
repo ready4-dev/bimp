@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_transform.R
 \name{transform_resc_occupcy_tb}
 \alias{transform_resc_occupcy_tb}
-\title{Transform resource occupancy}
+\title{Transform resource occupancy tibble}
 \usage{
 transform_resc_occupcy_tb(resc_occupcy_tb, resources_tb)
 }

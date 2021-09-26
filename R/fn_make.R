@@ -1,9 +1,9 @@
-#' Make cf resource
-#' @description make_cf_resc_tb() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make cf resource tibble. The function returns Cf resource (a tibble).
-#' @param cf_data_ls Cf data (a list)
+#' Make counter-factual resource tibble
+#' @description make_cf_resc_tb() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make counter-factual resource tibble. The function returns Counter-factual resource (a tibble).
+#' @param cf_data_ls Counter-factual data (a list)
 #' @param resources_tb Resources (a tibble)
 #' @param OOS_buffer_prop_dbl Occasion of service buffer prop (a double vector), Default: 0.1
-#' @return Cf resource (a tibble)
+#' @return Counter-factual resource (a tibble)
 #' @rdname make_cf_resc_tb
 #' @export 
 #' @importFrom dplyr inner_join select
@@ -21,21 +21,21 @@ make_cf_resc_tb <- function (cf_data_ls, resources_tb, OOS_buffer_prop_dbl = 0.1
         simple_outp_1L_lgl = F)
     return(cf_resc_tb)
 }
-#' Make expenditure summ
-#' @description make_expenditure_summ_tb() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make expenditure summ tibble. The function is called for its side effects and does not return a value.
+#' Make expenditure summary tibble
+#' @description make_expenditure_smry_tb() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make expenditure summary tibble. The function is called for its side effects and does not return a value.
 #' @param input_data_ls Input data (a list)
-#' @param incld_areas_ls Incld areas (a list)
-#' @param area_var_nm_1L_chr Area var name (a character vector of length one), Default: 'Recipient_STE_chr'
-#' @param n_ress_var_nm_1L_chr N ress var name (a character vector of length one), Default: 'Unit_Qty_dbl'
-#' @param unit_cost_var_nm_1L_chr Unit cost var name (a character vector of length one), Default: 'Unit_Cost_Dollars_dbl'
+#' @param incld_areas_ls Included areas (a list)
+#' @param area_var_nm_1L_chr Area variable name (a character vector of length one), Default: 'Recipient_STE_chr'
+#' @param n_rescs__var_nm_1L_chr N resources  variable name (a character vector of length one), Default: 'Unit_Qty_dbl'
+#' @param unit_cost_var_nm_1L_chr Unit cost variable name (a character vector of length one), Default: 'Unit_Cost_Dollars_dbl'
 #' @return NULL
-#' @rdname make_expenditure_summ_tb
+#' @rdname make_expenditure_smry_tb
 #' @export 
 #' @importFrom purrr map_dfr
 #' @importFrom tibble tibble
 #' @keywords internal
-make_expenditure_summ_tb <- function (input_data_ls, incld_areas_ls, area_var_nm_1L_chr = "Recipient_STE_chr", 
-    n_ress_var_nm_1L_chr = "Unit_Qty_dbl", unit_cost_var_nm_1L_chr = "Unit_Cost_Dollars_dbl") 
+make_expenditure_smry_tb <- function (input_data_ls, incld_areas_ls, area_var_nm_1L_chr = "Recipient_STE_chr", 
+    n_rescs__var_nm_1L_chr = "Unit_Qty_dbl", unit_cost_var_nm_1L_chr = "Unit_Cost_Dollars_dbl") 
 {
     purrr::map_dfr(incld_areas_ls, ~{
         if (.x[1] == "ALL") {
@@ -47,11 +47,11 @@ make_expenditure_summ_tb <- function (input_data_ls, incld_areas_ls, area_var_nm
         tibble::tibble(State_chr = paste0(.x, collapse = "_"), 
             Expenditure_dbl = calculate_expenditure(input_data_ls$resources_tb, 
                 incld_areas_chr = incld_areas_chr, area_var_nm_1L_chr = area_var_nm_1L_chr, 
-                n_ress_var_nm_1L_chr = n_ress_var_nm_1L_chr, 
+                n_rescs__var_nm_1L_chr = n_rescs__var_nm_1L_chr, 
                 unit_cost_var_nm_1L_chr = unit_cost_var_nm_1L_chr))
     })
 }
-#' Make resource use
+#' Make resource use data.frame
 #' @description make_resource_use_df() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make resource use data.frame. The function returns Resource use (a data.frame).
 #' @param input_data_ls Input data (a list)
 #' @return Resource use (a data.frame)

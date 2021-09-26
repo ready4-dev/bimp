@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_print.R
 \name{print_resc_occupcy_tb}
 \alias{print_resc_occupcy_tb}
-\title{Print resource occupancy}
+\title{Print resource occupancy tibble}
 \usage{
 print_resc_occupcy_tb(
   resc_occupcy_tb,
@@ -21,7 +21,7 @@ print_resc_occupcy_tb(
 
 \item{caption_1L_chr}{Caption (a character vector of length one), Default: 'Resource occupancy and proportion of demand met (predicted from current input data)'}
 
-\item{mkdn_tbl_ref_1L_chr}{Mkdn table reference (a character vector of length one), Default: 'tab:metneed'}
+\item{mkdn_tbl_ref_1L_chr}{Markdown table reference (a character vector of length one), Default: 'tab:metneed'}
 
 \item{output_type_1L_chr}{Output type (a character vector of length one), Default: 'HTML'}
 

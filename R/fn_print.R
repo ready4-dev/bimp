@@ -1,21 +1,21 @@
-#' Print expdr summ
-#' @description print_expdr_summ_tb() is a Print function that prints output to console Specifically, this function implements an algorithm to print expdr summ tibble. The function is called for its side effects and does not return a value.
-#' @param expdr_summ_tb Expdr summ (a tibble)
+#' Print expenditure summary tibble
+#' @description print_expdr_smry_tb() is a Print function that prints output to console Specifically, this function implements an algorithm to print expenditure summary tibble. The function is called for its side effects and does not return a value.
+#' @param expdr_smry_tb Expenditure summary (a tibble)
 #' @param caption_1L_chr Caption (a character vector of length one), Default: 'Predicted Expenditure'
-#' @param mkdn_tbl_ref_1L_chr Mkdn table reference (a character vector of length one), Default: 'tab:exptst'
+#' @param mkdn_tbl_ref_1L_chr Markdown table reference (a character vector of length one), Default: 'tab:exptst'
 #' @param output_type_1L_chr Output type (a character vector of length one), Default: 'HTML'
 #' @param use_rdocx_1L_lgl Use rdocx (a logical vector of length one), Default: T
 #' @return NULL
-#' @rdname print_expdr_summ_tb
+#' @rdname print_expdr_smry_tb
 #' @export 
 #' @importFrom dplyr mutate select
 #' @importFrom ready4show print_table
 #' @keywords internal
-print_expdr_summ_tb <- function (expdr_summ_tb, caption_1L_chr = "Predicted Expenditure", 
+print_expdr_smry_tb <- function (expdr_smry_tb, caption_1L_chr = "Predicted Expenditure", 
     mkdn_tbl_ref_1L_chr = "tab:exptst", output_type_1L_chr = "HTML", 
     use_rdocx_1L_lgl = T) 
 {
-    expdr_summ_tb %>% dplyr::mutate(Annual_Cost = format(Expenditure_dbl, 
+    expdr_smry_tb %>% dplyr::mutate(Annual_Cost = format(Expenditure_dbl, 
         big.mark = " ")) %>% dplyr::select(-Expenditure_dbl) %>% 
         remove_col_nms_obj_sfcs(complete_cases_1L_lgl = T) %>% 
         ready4show::print_table(output_type_1L_chr = output_type_1L_chr, 
@@ -23,11 +23,11 @@ print_expdr_summ_tb <- function (expdr_summ_tb, caption_1L_chr = "Predicted Expe
             mkdn_tbl_ref_1L_chr = "tab:exptst", footnotes_chr = "", 
             big_mark_1L_chr = " ")
 }
-#' Print intvs
-#' @description print_intvs_df() is a Print function that prints output to console Specifically, this function implements an algorithm to print intvs data.frame. The function is called for its side effects and does not return a value.
-#' @param intvs_df Intvs (a data.frame)
+#' Print interventions data.frame
+#' @description print_intvs_df() is a Print function that prints output to console Specifically, this function implements an algorithm to print interventions data.frame. The function is called for its side effects and does not return a value.
+#' @param intvs_df Interventions (a data.frame)
 #' @param caption_1L_chr Caption (a character vector of length one), Default: 'Included mental health interventions'
-#' @param mkdn_tbl_ref_1L_chr Mkdn table reference (a character vector of length one), Default: 'tab:intvs'
+#' @param mkdn_tbl_ref_1L_chr Markdown table reference (a character vector of length one), Default: 'tab:intvs'
 #' @param output_type_1L_chr Output type (a character vector of length one), Default: 'HTML'
 #' @param use_rdocx_1L_lgl Use rdocx (a logical vector of length one), Default: T
 #' @return NULL
@@ -55,20 +55,20 @@ print_intvs_df <- function (intvs_df, caption_1L_chr = "Included mental health i
             use_rdocx_1L_lgl = use_rdocx_1L_lgl, caption_1L_chr = caption_1L_chr, 
             mkdn_tbl_ref_1L_chr = mkdn_tbl_ref_1L_chr, footnotes_chr = "")
 }
-#' Print recpts
-#' @description print_recpts_tb() is a Print function that prints output to console Specifically, this function implements an algorithm to print recpts tibble. The function is called for its side effects and does not return a value.
+#' Print recipients tibble
+#' @description print_rcps_tb() is a Print function that prints output to console Specifically, this function implements an algorithm to print recipients tibble. The function is called for its side effects and does not return a value.
 #' @param recipients_tb Recipients (a tibble)
 #' @param caption_1L_chr Caption (a character vector of length one), Default: 'Team groups'
-#' @param mkdn_tbl_ref_1L_chr Mkdn table reference (a character vector of length one), Default: 'tab:pgps'
+#' @param mkdn_tbl_ref_1L_chr Markdown table reference (a character vector of length one), Default: 'tab:pgps'
 #' @param output_type_1L_chr Output type (a character vector of length one), Default: 'HTML'
 #' @param use_rdocx_1L_lgl Use rdocx (a logical vector of length one), Default: T
 #' @return NULL
-#' @rdname print_recpts_tb
+#' @rdname print_rcps_tb
 #' @export 
 #' @importFrom dplyr select
 #' @importFrom ready4show print_table
 #' @keywords internal
-print_recpts_tb <- function (recipients_tb, caption_1L_chr = "Team groups", mkdn_tbl_ref_1L_chr = "tab:pgps", 
+print_rcps_tb <- function (recipients_tb, caption_1L_chr = "Team groups", mkdn_tbl_ref_1L_chr = "tab:pgps", 
     output_type_1L_chr = "HTML", use_rdocx_1L_lgl = T) 
 {
     recipients_tb %>% dplyr::select(-Recipient_UID_chr, -Recipient_Type_chr, 
@@ -77,12 +77,12 @@ print_recpts_tb <- function (recipients_tb, caption_1L_chr = "Team groups", mkdn
             use_rdocx_1L_lgl = use_rdocx_1L_lgl, caption_1L_chr = caption_1L_chr, 
             mkdn_tbl_ref_1L_chr = mkdn_tbl_ref_1L_chr, footnotes_chr = "")
 }
-#' Print resource occupancy
+#' Print resource occupancy tibble
 #' @description print_resc_occupcy_tb() is a Print function that prints output to console Specifically, this function implements an algorithm to print resource occupancy tibble. The function is called for its side effects and does not return a value.
 #' @param resc_occupcy_tb Resource occupancy (a tibble)
 #' @param resources_tb Resources (a tibble)
 #' @param caption_1L_chr Caption (a character vector of length one), Default: 'Resource occupancy and proportion of demand met (predicted from current input data)'
-#' @param mkdn_tbl_ref_1L_chr Mkdn table reference (a character vector of length one), Default: 'tab:metneed'
+#' @param mkdn_tbl_ref_1L_chr Markdown table reference (a character vector of length one), Default: 'tab:metneed'
 #' @param output_type_1L_chr Output type (a character vector of length one), Default: 'HTML'
 #' @param use_rdocx_1L_lgl Use rdocx (a logical vector of length one), Default: T
 #' @return NULL
@@ -100,11 +100,11 @@ print_resc_occupcy_tb <- function (resc_occupcy_tb, resources_tb, caption_1L_chr
             use_rdocx_1L_lgl = use_rdocx_1L_lgl, caption_1L_chr = "Resource occupancy and proportion of demand met (predicted from current input data)", 
             mkdn_tbl_ref_1L_chr = "tab:metneed")
 }
-#' Print resource use
+#' Print resource use data.frame
 #' @description print_resource_use_df() is a Print function that prints output to console Specifically, this function implements an algorithm to print resource use data.frame. The function is called for its side effects and does not return a value.
 #' @param resource_use_df Resource use (a data.frame)
 #' @param caption_1L_chr Caption (a character vector of length one), Default: 'Resource use'
-#' @param mkdn_tbl_ref_1L_chr Mkdn table reference (a character vector of length one), Default: 'tab:resuse'
+#' @param mkdn_tbl_ref_1L_chr Markdown table reference (a character vector of length one), Default: 'tab:resuse'
 #' @param output_type_1L_chr Output type (a character vector of length one), Default: 'HTML'
 #' @param use_rdocx_1L_lgl Use rdocx (a logical vector of length one), Default: T
 #' @return NULL
@@ -125,11 +125,11 @@ print_resource_use_df <- function (resource_use_df, caption_1L_chr = "Resource u
             use_rdocx_1L_lgl = use_rdocx_1L_lgl, caption_1L_chr = "Resource use", 
             mkdn_tbl_ref_1L_chr = "tab:resuse", footnotes_chr = "")
 }
-#' Print resources
+#' Print resources data.frame
 #' @description print_resources_df() is a Print function that prints output to console Specifically, this function implements an algorithm to print resources data.frame. The function is called for its side effects and does not return a value.
 #' @param resources_df Resources (a data.frame)
 #' @param caption_1L_chr Caption (a character vector of length one), Default: 'Resource types'
-#' @param mkdn_tbl_ref_1L_chr Mkdn table reference (a character vector of length one), Default: 'tab:restypes'
+#' @param mkdn_tbl_ref_1L_chr Markdown table reference (a character vector of length one), Default: 'tab:restypes'
 #' @param output_type_1L_chr Output type (a character vector of length one), Default: 'HTML'
 #' @param use_rdocx_1L_lgl Use rdocx (a logical vector of length one), Default: T
 #' @return NULL

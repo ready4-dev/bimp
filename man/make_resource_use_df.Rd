@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_make.R
 \name{make_resource_use_df}
 \alias{make_resource_use_df}
-\title{Make resource use}
+\title{Make resource use data.frame}
 \usage{
 make_resource_use_df(input_data_ls)
 }

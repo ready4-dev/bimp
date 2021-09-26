@@ -15,10 +15,10 @@ make_cf_resc_tb <- function(cf_data_ls,
                       simple_outp_1L_lgl = F)
   return(cf_resc_tb)
 }
-make_expenditure_summ_tb <- function(input_data_ls,
+make_expenditure_smry_tb <- function(input_data_ls,
                                      incld_areas_ls,
                                      area_var_nm_1L_chr = "Recipient_STE_chr",
-                                     n_ress_var_nm_1L_chr = "Unit_Qty_dbl",
+                                     n_rescs__var_nm_1L_chr = "Unit_Qty_dbl",
                                      unit_cost_var_nm_1L_chr = "Unit_Cost_Dollars_dbl"){
   purrr::map_dfr(incld_areas_ls,
                  ~{
@@ -31,7 +31,7 @@ make_expenditure_summ_tb <- function(input_data_ls,
                                   Expenditure_dbl = calculate_expenditure(input_data_ls$resources_tb,
                                                                           incld_areas_chr = incld_areas_chr,
                                                                           area_var_nm_1L_chr = area_var_nm_1L_chr,
-                                                                          n_ress_var_nm_1L_chr = n_ress_var_nm_1L_chr,
+                                                                          n_rescs__var_nm_1L_chr = n_rescs__var_nm_1L_chr,
                                                                           unit_cost_var_nm_1L_chr = unit_cost_var_nm_1L_chr))
                  })
 }

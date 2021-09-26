@@ -2,16 +2,16 @@
 % Please edit documentation in R/fn_add.R
 \name{add_sfx_to_var_nm}
 \alias{add_sfx_to_var_nm}
-\title{Add suffix to var name}
+\title{Add suffix to variable name}
 \usage{
 add_sfx_to_var_nm(var_nm_1L_chr, data_tb)
 }
 \arguments{
-\item{var_nm_1L_chr}{Var name (a character vector of length one)}
+\item{var_nm_1L_chr}{Variable name (a character vector of length one)}
 
 \item{data_tb}{Data (a tibble)}
 }
 \description{
-add_sfx_to_var_nm() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add suffix to var name. Function argument var_nm_1L_chr specifies the object to be updated. The function is called for its side effects and does not return a value.
+add_sfx_to_var_nm() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add suffix to variable name. Function argument var_nm_1L_chr specifies the object to be updated. The function is called for its side effects and does not return a value.
 }
 \keyword{internal}

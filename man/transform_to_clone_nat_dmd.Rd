@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_transform.R
 \name{transform_to_clone_nat_dmd}
 \alias{transform_to_clone_nat_dmd}
-\title{Transform to clone nat dmd}
+\title{Transform to clone nat demand}
 \usage{
 transform_to_clone_nat_dmd(
   input_data_ls,
@@ -22,18 +22,18 @@ transform_to_clone_nat_dmd(
 Target_1L_chr = "AUS_SNR_F"), AUS_SNR_M = get_clone_targets(input_data_ls,
 Sex_1L_chr = "M", Target_1L_chr = "AUS_SNR_M"))}
 
-\item{incld_intvs_cats_chr}{Incld intvs cats (a character vector), Default: 'NA'}
+\item{incld_intvs_cats_chr}{Included interventions cats (a character vector), Default: 'NA'}
 
-\item{incld_intvs_chr}{Incld intvs (a character vector), Default: 'NA'}
+\item{incld_intvs_chr}{Included interventions (a character vector), Default: 'NA'}
 
-\item{intv_uid_var_nm_1L_chr}{Intv uid var name (a character vector of length one), Default: 'Intervention_UID_chr'}
+\item{intv_uid_var_nm_1L_chr}{Intervention unique identifier variable name (a character vector of length one), Default: 'Intervention_UID_chr'}
 
-\item{intv_cat_uid_var_nm_1L_chr}{Intv cat uid var name (a character vector of length one), Default: 'Intervention_Cat_UID_chr'}
+\item{intv_cat_uid_var_nm_1L_chr}{Intervention cat unique identifier variable name (a character vector of length one), Default: 'Intervention_Cat_UID_chr'}
 }
 \value{
 Input data (a list)
 }
 \description{
-transform_to_clone_nat_dmd() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform to clone nat dmd. Function argument input_data_ls specifies the object to be updated. Argument clone_ls provides the object to be updated. The function returns Input data (a list).
+transform_to_clone_nat_dmd() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform to clone nat demand. Function argument input_data_ls specifies the object to be updated. Argument clone_ls provides the object to be updated. The function returns Input data (a list).
 }
 \keyword{internal}

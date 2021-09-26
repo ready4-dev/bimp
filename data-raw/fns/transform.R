@@ -37,7 +37,7 @@ transform_inp_data_for_incld_intvs <- function(input_data_ls,
     })
   return(input_data_ls)
 }
-transform_inp_data_for_ress_calcs <- function(input_data_ls){
+transform_inp_data_for_rescs__calcs <- function(input_data_ls){
   input_data_ls$resources_tb <- input_data_ls$resources_tb %>%
     add_eftv_wkly_hrs() %>%
     add_meets_non_OOS_wkly_hrs_test() %>%
@@ -49,7 +49,7 @@ transform_inp_ls_for_analysis <- function(input_data_ls,
   input_data_ls$resource_use_tb <- input_data_ls$resource_use_tb %>%
     dplyr::filter(Proportion_Each_Timeframe_dbl > 0)
   tfd_input_data_ls <- input_data_ls %>%
-    transform_inp_data_for_ress_calcs() %>%
+    transform_inp_data_for_rescs__calcs() %>%
     add_main_calcs_tb(OOS_buffer_prop_dbl = OOS_buffer_prop_dbl) %>%
     add_resc_occupcy_tb() %>%
     update_main_calcs_with_met_dmd()
@@ -71,7 +71,7 @@ transform_to_clone_nat_dmd <- function(input_data_ls,
                                                         incld_intvs_chr = incld_intvs_chr,
                                                         intv_uid_var_nm_1L_chr = intv_uid_var_nm_1L_chr,
                                                         intv_cat_uid_var_nm_1L_chr = intv_cat_uid_var_nm_1L_chr)
-  addl_res_tb <- purrr::map2_dfr(clone_ls,
+  addl_resc_tb <- purrr::map2_dfr(clone_ls,
                                  names(clone_ls),
                                  ~ {
                                    template_1L_chr <- .y
@@ -112,7 +112,7 @@ transform_to_clone_nat_dmd <- function(input_data_ls,
                                    new_tb
                                  })
   input_data_ls$resource_use_tb <- dplyr::bind_rows(input_data_ls$resource_use_tb,
-                                                    addl_res_tb %>% dplyr::select(-Discipline_UID_chr)) %>%
+                                                    addl_resc_tb %>% dplyr::select(-Discipline_UID_chr)) %>%
     dplyr::distinct()
   return(input_data_ls)
 }
