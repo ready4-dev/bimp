@@ -23,8 +23,8 @@ print_expdr_smry_tb <- function (expdr_smry_tb, caption_1L_chr = "Predicted Expe
             mkdn_tbl_ref_1L_chr = "tab:exptst", footnotes_chr = "", 
             big_mark_1L_chr = " ")
 }
-#' Print interventions data.frame
-#' @description print_intvs_df() is a Print function that prints output to console Specifically, this function implements an algorithm to print interventions data.frame. The function is called for its side effects and does not return a value.
+#' Print interventions dataframe
+#' @description print_intvs_df() is a Print function that prints output to console Specifically, this function implements an algorithm to print interventions dataframe. The function is called for its side effects and does not return a value.
 #' @param intvs_df Interventions (a data.frame)
 #' @param caption_1L_chr Caption (a character vector of length one), Default: 'Included mental health interventions'
 #' @param mkdn_tbl_ref_1L_chr Markdown table reference (a character vector of length one), Default: 'tab:intvs'
@@ -100,8 +100,8 @@ print_resc_occupcy_tb <- function (resc_occupcy_tb, resources_tb, caption_1L_chr
             use_rdocx_1L_lgl = use_rdocx_1L_lgl, caption_1L_chr = "Resource occupancy and proportion of demand met (predicted from current input data)", 
             mkdn_tbl_ref_1L_chr = "tab:metneed")
 }
-#' Print resource use data.frame
-#' @description print_resource_use_df() is a Print function that prints output to console Specifically, this function implements an algorithm to print resource use data.frame. The function is called for its side effects and does not return a value.
+#' Print resource use dataframe
+#' @description print_resource_use_df() is a Print function that prints output to console Specifically, this function implements an algorithm to print resource use dataframe. The function is called for its side effects and does not return a value.
 #' @param resource_use_df Resource use (a data.frame)
 #' @param caption_1L_chr Caption (a character vector of length one), Default: 'Resource use'
 #' @param mkdn_tbl_ref_1L_chr Markdown table reference (a character vector of length one), Default: 'tab:resuse'
@@ -125,8 +125,8 @@ print_resource_use_df <- function (resource_use_df, caption_1L_chr = "Resource u
             use_rdocx_1L_lgl = use_rdocx_1L_lgl, caption_1L_chr = "Resource use", 
             mkdn_tbl_ref_1L_chr = "tab:resuse", footnotes_chr = "")
 }
-#' Print resources data.frame
-#' @description print_resources_df() is a Print function that prints output to console Specifically, this function implements an algorithm to print resources data.frame. The function is called for its side effects and does not return a value.
+#' Print resources dataframe
+#' @description print_resources_df() is a Print function that prints output to console Specifically, this function implements an algorithm to print resources dataframe. The function is called for its side effects and does not return a value.
 #' @param resources_df Resources (a data.frame)
 #' @param caption_1L_chr Caption (a character vector of length one), Default: 'Resource types'
 #' @param mkdn_tbl_ref_1L_chr Markdown table reference (a character vector of length one), Default: 'tab:restypes'

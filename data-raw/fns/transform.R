@@ -77,37 +77,37 @@ transform_to_clone_nat_dmd <- function(input_data_ls,
                                    template_1L_chr <- .y
                                    template_tb <- alt_inp_data_ls$resource_use_tb %>%
                                      dplyr::filter(Recipient_UID_chr == .y) %>%
-                                     dplyr::mutate(Discipline_UID_chr = Resource_UID_chr %>% purrr::map_chr(~ready4fun::get_from_lup_obj(alt_inp_data_ls$resources_tb,
+                                     dplyr::mutate(Discipline_UID_chr = Resource_UID_chr %>% purrr::map_chr(~ready4::get_from_lup_obj(alt_inp_data_ls$resources_tb,
                                                                                                     match_var_nm_1L_chr = "Resource_UID_chr",
                                                                                                     match_value_xx = .x,
                                                                                                     target_var_nm_1L_chr = "Discipline_UID_chr",
-                                                                                                    evaluate_lgl = F)))
+                                                                                                    evaluate_1L_lgl = F)))
                                    recipients_chr <- .x
                                    new_tb <- purrr::map_dfr(recipients_chr,
                                                             ~ {
-                                                              state_1L_chr <- ready4fun::get_from_lup_obj(alt_inp_data_ls$recipients_tb,
+                                                              state_1L_chr <- ready4::get_from_lup_obj(alt_inp_data_ls$recipients_tb,
                                                                                                           match_var_nm_1L_chr = "Recipient_UID_chr",
                                                                                                           match_value_xx = .x,
                                                                                                           target_var_nm_1L_chr = "Location_UID_chr",
-                                                                                                          evaluate_lgl = F)
+                                                                                                          evaluate_1L_lgl = F)
                                                               template_tb %>%
                                                                 dplyr::mutate(Recipient_UID_chr = .x) %>%
-                                                                dplyr::mutate(Resource_UID_chr = ready4fun::get_from_lup_obj(alt_inp_data_ls$locations_tb,
+                                                                dplyr::mutate(Resource_UID_chr = ready4::get_from_lup_obj(alt_inp_data_ls$locations_tb,
                                                                                                                              match_var_nm_1L_chr = "Location_UID_chr",
                                                                                                                              match_value_xx = state_1L_chr,
                                                                                                                              target_var_nm_1L_chr = "STE_chr",
-                                                                                                                             evaluate_lgl = F) %>%
-                                                                                ready4fun::get_from_lup_obj(data_lookup_tb = alt_inp_data_ls$resources_tb %>%
+                                                                                                                             evaluate_1L_lgl = F) %>%
+                                                                                ready4::get_from_lup_obj(data_lookup_tb = alt_inp_data_ls$resources_tb %>%
                                                                                                               dplyr::filter(Discipline_UID_chr %in% unique(template_tb$Discipline_UID_chr),
-                                                                                                                            Recipient_Sex_chr == ready4fun::get_from_lup_obj(alt_inp_data_ls$recipients_tb,
+                                                                                                                            Recipient_Sex_chr == ready4::get_from_lup_obj(alt_inp_data_ls$recipients_tb,
                                                                                                                                                                              match_var_nm_1L_chr = "Recipient_UID_chr",
                                                                                                                                                                              match_value_xx = template_1L_chr,
                                                                                                                                                                              target_var_nm_1L_chr = "Sex_chr",
-                                                                                                                                                                             evaluate_lgl = F)),
+                                                                                                                                                                             evaluate_1L_lgl = F)),
                                                                                                             match_var_nm_1L_chr = "Recipient_STE_chr",
                                                                                                             match_value_xx = .,
                                                                                                             target_var_nm_1L_chr = "Resource_UID_chr",
-                                                                                                            evaluate_lgl = F))
+                                                                                                            evaluate_1L_lgl = F))
 
                                                             })
                                    new_tb

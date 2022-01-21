@@ -21,7 +21,6 @@ get_clone_targets <- function (input_data_ls, Sex_1L_chr = "F", Target_1L_chr = 
 #' @return NULL
 #' @rdname get_nbr_of_decimals
 #' @export 
-
 #' @keywords internal
 get_nbr_of_decimals <- function (nbr_1L_dbl) 
 {

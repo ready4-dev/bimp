@@ -1,11 +1,17 @@
+url: https://ready4-dev.github.io/bimp/
+
+template:
+  bootstrap: 5
+  bootswatch: journal
+
 home:
   links:
   - text: Manual - User (PDF)
-    href: https://dataverse.harvard.edu/api/access/datafile/5197656
+    href: https://github.com/ready4-dev/bimp/releases/download/Documentation_0.0/bimp_User.pdf
   - text: Manual - Developer (PDF)
-    href: https://dataverse.harvard.edu/api/access/datafile/5197655
-  - text: Project website
-    href:  https://ready4-dev.github.io/ready4/
+    href: https://github.com/ready4-dev/bimp/releases/download/Documentation_0.0/bimp_Developer.pdf
+  - text: ready4 framework
+    href:  https://www.ready4-dev.com/
 development:
   mode: auto
 reference:

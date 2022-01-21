@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_print.R
 \name{print_intvs_df}
 \alias{print_intvs_df}
-\title{Print interventions data.frame}
+\title{Print interventions dataframe}
 \usage{
 print_intvs_df(
   intvs_df,
@@ -24,6 +24,6 @@ print_intvs_df(
 \item{use_rdocx_1L_lgl}{Use rdocx (a logical vector of length one), Default: T}
 }
 \description{
-print_intvs_df() is a Print function that prints output to console Specifically, this function implements an algorithm to print interventions data.frame. The function is called for its side effects and does not return a value.
+print_intvs_df() is a Print function that prints output to console Specifically, this function implements an algorithm to print interventions dataframe. The function is called for its side effects and does not return a value.
 }
 \keyword{internal}

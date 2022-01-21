@@ -1,5 +1,6 @@
-library(ready4fun)
-ready4fun::write_fn_type_dirs()
+library(ready4)
+library(ready4use)
+#ready4fun::write_fn_type_dirs()
 pkg_desc_ls <- ready4fun::make_pkg_desc_ls(pkg_title_1L_chr = "Undertake budget impact analysis using open, modulal mental health simulations.",
                                            pkg_desc_1L_chr = "Tools for undertaking budget impact analyses for mental health projects.
   This development version of the bimp package has been made available as part of the process of testing and documenting the package. The tools contained in this development release automate a number of tasks which MODIFY THE DIRECTORY STRUCTURE OF YOUR LOCAL MACHINE.
@@ -10,32 +11,34 @@ pkg_desc_ls <- ready4fun::make_pkg_desc_ls(pkg_title_1L_chr = "Undertake budget 
                                            ),
                                            urls_chr = c("https://ready4-dev.github.io/bimp/",
                                                         "https://github.com/ready4-dev/bimp",
-                                                        "https://ready4-dev.github.io/ready4/"))
-pkg_setup_r3 <- pkg_desc_ls %>%
-  ready4fun::make_pkg_setup_ls(addl_pkgs_ls = ready4fun::make_addl_pkgs_ls(suggests_chr = "rmarkdown"),
+                                                        "https://www.ready4-dev.com/"))
+x <- pkg_desc_ls %>%
+  ready4fun::make_manifest(addl_pkgs_ls = ready4fun::make_addl_pkgs_ls(suggests_chr = "rmarkdown"),
                                build_ignore_ls = ready4fun::make_build_ignore_ls(file_nms_chr = c("initial_setup.R")),
                                check_type_1L_chr = "ready4",
                                copyright_holders_chr = "Orygen",
-                               dev_pkgs_chr = c("ready4fun","ready4class","ready4use", "ready4show"),
+                               custom_dmt_ls = ready4fun::make_custom_dmt_ls(user_manual_fns_chr = c("calculate_expenditure",
+                                                                                                     "import_input_data")),
+                               dev_pkgs_chr = c("ready4","ready4use", "ready4show"),
                                lifecycle_stage_1L_chr = "experimental",
                                path_to_pkg_logo_1L_chr = "../../../../../Documentation/Images/ready4use-logo/default.png",
-                               pkg_dmt_dv_dss_chr = c("https://doi.org/10.7910/DVN/HLLXZN",
-                                                      "https://doi.org/10.7910/DVN/2Y9VF9"),
-                               ready4_type_1L_chr = "modelling",
-                               user_manual_fns_chr = c("calculate_expenditure",
-                                                       "import_input_data"))
-pkg_setup_r3 <- ready4fun::author(pkg_setup_r3)
-# pkg_setup_r3$subsequent_ls$abbreviations_lup <- pkg_setup_r3$subsequent_ls$abbreviations_lup %>%
+                           piggyback_to_1L_chr = "ready4-dev/ready4",
+
+                               ready4_type_1L_chr = "modelling"
+                           ## ADD ZENODO DOI
+                               )
+x <- author(x)
+# manifest_r3$subsequent_ls$abbreviations_lup <- manifest_r3$subsequent_ls$abbreviations_lup %>%
 #   dplyr::filter(short_name_chr != "efc") %>%
 #   ready4fun::update_abbr_lup(short_name_chr = "re",
 #                              long_name_chr = "result")
-# pkg_setup_r3 <- ready4fun::write_new_abbrs(pkg_setup_r3,
+# manifest_r3 <- ready4fun::write_new_abbrs(manifest_r3,
 #                                            long_name_chr = c("calculation","counter-factual","demand","effective",
 #                                                              "episode", "expenditure", "female", "gender", "hour",
 #                                                              "included", "intervention", "occupancy", "occasion of service",
 #                                                              "recipient", "resource", "weekly"),
 #                                            no_plural_chr = c("effective", "included","occupancy", "weekly"))
-# pkg_setup_r3 <- ready4fun::update_msng_abbrs(pkg_setup_r3,
+# manifest_r3 <- ready4fun::update_msng_abbrs(manifest_r3,
 #                                              are_words_chr = c("non"),
 #                                              tf_to_singular_chr = c(calc = "calcs",
 #                                                                     epsd = "epsds",
@@ -43,7 +46,7 @@ pkg_setup_r3 <- ready4fun::author(pkg_setup_r3)
 #                                                                     intv = "intvs",
 #                                                                     rcp = "rcps",
 #                                                                     resc = "rescs"))
-# pkg_setup_r3 <- ready4fun::write_new_fn_types(pkg_setup_r3,
+# manifest_r3 <- ready4fun::write_new_fn_types(manifest_r3,
 #                                                      fn_type_desc_chr = c("Binds two objects together to create a composite object.",
 #                                                                           "Modifies the format of an output."),
 #                                       is_generic_lgl = T,

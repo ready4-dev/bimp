@@ -22,7 +22,7 @@ bind_tbs_in_input_ls <- function(bc_ls,
     if(nrow(cf_ls[[.x]]) == 0){
       combined_tb <- bc_ls[[.x]]
     }else{
-      combined_tb <- ready4fun::add_lups(bc_ls[[.x]], new_lup = cf_ls[[.x]], key_var_nm_1L_chr = names(cf_ls[[.x]])[1], priority_lup_for_dupls_1L_chr = "new")
+      combined_tb <- ready4::add_lups(bc_ls[[.x]], new_lup = cf_ls[[.x]], key_var_nm_1L_chr = names(cf_ls[[.x]])[1], priority_lup_for_dupls_1L_chr = "new")
     }
     combined_tb
   }) %>% stats::setNames(names(bc_ls))

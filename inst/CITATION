@@ -1,0 +1,19 @@
+citHeader(paste0("To cite ",meta$Package," in publications use:"))
+
+citEntry(
+  entry    = "Manual",
+  doi      = "10.5281/zenodo.5606250",
+  title    = paste0(meta$Package,": ",meta$Title),
+  author   = c(person("Matthew", "Hamilton")),
+  year     = "2022",
+  note     = sprintf("R package version %s", meta$Version),
+  url      = "https://ready4-dev.github.io/bimp/",
+  textVersion = paste("Matthew Hamilton ",
+  "(2022).",
+  paste0(meta$Package,": ",meta$Title,
+  "."),
+  paste0(sprintf("Version %s", meta$Version),"."),
+  paste0("https://doi.org/",
+"10.5281/zenodo.5606250")
+  )
+)

@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_print.R
 \name{print_resources_df}
 \alias{print_resources_df}
-\title{Print resources data.frame}
+\title{Print resources dataframe}
 \usage{
 print_resources_df(
   resources_df,
@@ -24,6 +24,6 @@ print_resources_df(
 \item{use_rdocx_1L_lgl}{Use rdocx (a logical vector of length one), Default: T}
 }
 \description{
-print_resources_df() is a Print function that prints output to console Specifically, this function implements an algorithm to print resources data.frame. The function is called for its side effects and does not return a value.
+print_resources_df() is a Print function that prints output to console Specifically, this function implements an algorithm to print resources dataframe. The function is called for its side effects and does not return a value.
 }
 \keyword{internal}

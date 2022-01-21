@@ -35,7 +35,7 @@ bind_resource_tbs <- function (tfd_resc_use__tb, resources_tb, simple_outp_1L_lg
 #' @rdname bind_tbs_in_input_ls
 #' @export 
 #' @importFrom purrr map
-#' @importFrom ready4fun add_lups
+#' @importFrom ready4 add_lups
 #' @importFrom stats setNames
 #' @keywords internal
 bind_tbs_in_input_ls <- function (bc_ls, cf_ls) 
@@ -45,7 +45,7 @@ bind_tbs_in_input_ls <- function (bc_ls, cf_ls)
             combined_tb <- bc_ls[[.x]]
         }
         else {
-            combined_tb <- ready4fun::add_lups(bc_ls[[.x]], new_lup = cf_ls[[.x]], 
+            combined_tb <- ready4::add_lups(bc_ls[[.x]], new_lup = cf_ls[[.x]], 
                 key_var_nm_1L_chr = names(cf_ls[[.x]])[1], priority_lup_for_dupls_1L_chr = "new")
         }
         combined_tb

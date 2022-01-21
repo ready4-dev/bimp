@@ -37,23 +37,23 @@ make_expenditure_smry_tb <- function(input_data_ls,
 }
 make_resource_use_df <- function(input_data_ls){
   resource_use_df <- input_data_ls$resource_use_tb %>%
-    dplyr::mutate(Intervention = purrr::map_chr(Intervention_UID_chr,~ready4fun::get_from_lup_obj(input_data_ls$interventions_tb,
+    dplyr::mutate(Intervention = purrr::map_chr(Intervention_UID_chr,~ready4::get_from_lup_obj(input_data_ls$interventions_tb,
                                                                                                   match_value_xx = .x,
                                                                                                   match_var_nm_1L_chr = "Intervention_UID_chr",
                                                                                                   target_var_nm_1L_chr = "Intervention_Name_chr",
-                                                                                                  evaluate_lgl = F)[1])) %>%
-    dplyr::mutate(Recipient = purrr::map_chr(Recipient_UID_chr,~ready4fun::get_from_lup_obj(input_data_ls$recipients_tb,
+                                                                                                  evaluate_1L_lgl = F)[1])) %>%
+    dplyr::mutate(Recipient = purrr::map_chr(Recipient_UID_chr,~ready4::get_from_lup_obj(input_data_ls$recipients_tb,
                                                                                             match_value_xx = .x,
                                                                                             match_var_nm_1L_chr = "Recipient_UID_chr",
                                                                                             target_var_nm_1L_chr = "Team_chr",
-                                                                                            evaluate_lgl = F)[1])) %>%
+                                                                                            evaluate_1L_lgl = F)[1])) %>%
     dplyr::mutate(Proportion_Using_Service = paste0(round(Proportion_Each_Timeframe_dbl *100,2)
                                                     #, " %"
     ) ) %>%
-    dplyr::mutate(Resource = purrr::map_chr(Resource_UID_chr,~ready4fun::get_from_lup_obj(input_data_ls$resources_tb,
+    dplyr::mutate(Resource = purrr::map_chr(Resource_UID_chr,~ready4::get_from_lup_obj(input_data_ls$resources_tb,
                                                                                           match_value_xx = .x,
                                                                                           match_var_nm_1L_chr = "Resource_UID_chr",
                                                                                           target_var_nm_1L_chr = "Role_Category_chr",
-                                                                                          evaluate_lgl = F)[1]))
+                                                                                          evaluate_1L_lgl = F)[1]))
   return(resource_use_df)
 }

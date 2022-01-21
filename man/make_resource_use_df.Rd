@@ -2,7 +2,7 @@
 % Please edit documentation in R/fn_make.R
 \name{make_resource_use_df}
 \alias{make_resource_use_df}
-\title{Make resource use data.frame}
+\title{Make resource use dataframe}
 \usage{
 make_resource_use_df(input_data_ls)
 }
@@ -13,6 +13,6 @@ make_resource_use_df(input_data_ls)
 Resource use (a data.frame)
 }
 \description{
-make_resource_use_df() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make resource use data.frame. The function returns Resource use (a data.frame).
+make_resource_use_df() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make resource use dataframe. The function returns Resource use (a data.frame).
 }
 \keyword{internal}
