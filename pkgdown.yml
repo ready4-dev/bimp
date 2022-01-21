@@ -1,7 +1,10 @@
 pandoc: 2.7.3
-pkgdown: 1.6.1
+pkgdown: 2.0.2
 pkgdown_sha: ~
 articles:
   bimp: bimp.html
-last_built: 2021-09-26T19:37Z
+last_built: 2022-01-21T22:42Z
+urls:
+  reference: https://ready4-dev.github.io/bimp/reference
+  article: https://ready4-dev.github.io/bimp/articles
 
