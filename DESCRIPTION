@@ -37,7 +37,7 @@ Imports:
     ready4 (>= 0.0.0.9084),
     ready4show (>= 0.0.0.9087),
     rlang,
-    specific (>= 0.0.0.9038),
+    igraph,
     stats,
     stringr,
     testthat,
