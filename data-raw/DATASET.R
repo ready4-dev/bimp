@@ -28,6 +28,7 @@ x <- pkg_desc_ls %>%
                            zenodo_badge_1L_chr = "[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5889462.svg)](https://doi.org/10.5281/zenodo.5889462)"
   )
 x <- author(x)
+usethis::use_dev_package("specific", remote ="ready4-dev/specific")
 # manifest_r3$subsequent_ls$abbreviations_lup <- manifest_r3$subsequent_ls$abbreviations_lup %>%
 #   dplyr::filter(short_name_chr != "efc") %>%
 #   ready4fun::update_abbr_lup(short_name_chr = "re",
