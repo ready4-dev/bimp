@@ -14,19 +14,19 @@ pkg_desc_ls <- ready4fun::make_pkg_desc_ls(pkg_title_1L_chr = "Undertake budget 
                                                         "https://www.ready4-dev.com/"))
 x <- pkg_desc_ls %>%
   ready4fun::make_manifest(addl_pkgs_ls = ready4fun::make_addl_pkgs_ls(suggests_chr = "rmarkdown"),
-                               build_ignore_ls = ready4fun::make_build_ignore_ls(file_nms_chr = c("initial_setup.R")),
-                               check_type_1L_chr = "ready4",
-                               copyright_holders_chr = "Orygen",
-                               custom_dmt_ls = ready4fun::make_custom_dmt_ls(user_manual_fns_chr = c("calculate_expenditure",
-                                                                                                     "import_input_data")),
-                               dev_pkgs_chr = c("ready4","ready4use", "ready4show"),
-                               lifecycle_stage_1L_chr = "experimental",
-                               path_to_pkg_logo_1L_chr = "../../../../../Documentation/Images/ready4use-logo/default.png",
+                           build_ignore_ls = ready4fun::make_build_ignore_ls(file_nms_chr = c("initial_setup.R")),
+                           check_type_1L_chr = "ready4",
+                           copyright_holders_chr = "Orygen",
+                           custom_dmt_ls = ready4fun::make_custom_dmt_ls(user_manual_fns_chr = c("calculate_expenditure",
+                                                                                                 "import_input_data")),
+                           dev_pkgs_chr = c("ready4","ready4use", "ready4show"),
+                           lifecycle_stage_1L_chr = "experimental",
+                           path_to_pkg_logo_1L_chr = "../../../../../Documentation/Images/bimp-logo/default.png",
                            piggyback_to_1L_chr = "ready4-dev/ready4",
 
-                               ready4_type_1L_chr = "modelling"
-                           ## ADD ZENODO DOI
-                               )
+                           ready4_type_1L_chr = "modelling",
+                           zenodo_badge_1L_chr = "[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5889462.svg)](https://doi.org/10.5281/zenodo.5889462)"
+  )
 x <- author(x)
 # manifest_r3$subsequent_ls$abbreviations_lup <- manifest_r3$subsequent_ls$abbreviations_lup %>%
 #   dplyr::filter(short_name_chr != "efc") %>%

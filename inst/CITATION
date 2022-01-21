@@ -2,7 +2,7 @@ citHeader(paste0("To cite ",meta$Package," in publications use:"))
 
 citEntry(
   entry    = "Manual",
-  doi      = "10.5281/zenodo.5606250",
+  doi      = "10.5281/zenodo.5889462",
   title    = paste0(meta$Package,": ",meta$Title),
   author   = c(person("Matthew", "Hamilton")),
   year     = "2022",
@@ -14,6 +14,6 @@ citEntry(
   "."),
   paste0(sprintf("Version %s", meta$Version),"."),
   paste0("https://doi.org/",
-"10.5281/zenodo.5606250")
+"10.5281/zenodo.5889462")
   )
 )
