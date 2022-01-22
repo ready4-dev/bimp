@@ -3,7 +3,7 @@ pkgdown: 2.0.2
 pkgdown_sha: ~
 articles:
   bimp: bimp.html
-last_built: 2022-01-22T21:20Z
+last_built: 2022-01-22T21:30Z
 urls:
   reference: https://ready4-dev.github.io/bimp/reference
   article: https://ready4-dev.github.io/bimp/articles
