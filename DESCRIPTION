@@ -45,7 +45,7 @@ Imports:
 VignetteBuilder: knitr
 Suggests: 
     rmarkdown
-Remotes: 
+Remotes:  
     ready4-dev/ready4,
     ready4-dev/ready4show,
-    ready4-dev/specific
+    orygen/specific
