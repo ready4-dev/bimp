@@ -88,10 +88,10 @@ jobs:
         shell: Rscript {0}
 
       - name: Fix igraph source installation in ubuntu
-       if: (runner.os == 'Linux')
-       run: |
-         Rscript -e "remove.packages(c('igraph'))"
-         conda install -c r r-igraph
+        if: (runner.os == 'Linux')
+        run: |
+          Rscript -e "remove.packages(c('igraph'))"
+          conda install -c r r-igraph
 
       - name: Session info
         run: |
