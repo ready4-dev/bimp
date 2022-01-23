@@ -23,6 +23,12 @@ jobs:
         with:
           use-public-rspm: true
 
+      - name: Fix igraph source installation in ubuntu
+       if: (runner.os == 'Linux')
+       run: |
+         Rscript -e "remove.packages(c('igraph'))"
+         conda install -c r r-igraph
+
       - uses: r-lib/actions/setup-r-dependencies@v1
         with:
           extra-packages: pkgdown
