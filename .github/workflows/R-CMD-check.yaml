@@ -69,6 +69,7 @@ jobs:
         run: |
           sudo apt-get install libharfbuzz-dev
           sudo apt-get install libfribidi-dev
+          sudo apt-get install libxml2
           while read -r cmd
           do
             eval sudo $cmd

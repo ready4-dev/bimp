@@ -27,8 +27,6 @@ jobs:
         if: (runner.os == 'Linux')
         run: |
           conda install -c r r-igraph
-          Rscript -e 'install.packages("devtools")'
-          Rscript -e 'devtools::install_github("orygen/specific")'
 
       - uses: r-lib/actions/setup-r-dependencies@v1
         with:
