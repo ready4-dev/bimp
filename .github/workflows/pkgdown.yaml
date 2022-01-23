@@ -1,40 +1,74 @@
-# Workflow derived from https://github.com/r-lib/actions/tree/master/examples
-# Need help debugging build failures? Start at https://github.com/r-lib/actions#where-to-find-help
+# Source: https://github.com/ms609/TreeDistData/blob/ab696422aed3cf85556942f8cbd32d2fe16c903d/.github/workflows/pkgdown.yml
 on:
   push:
-    branches: [main, master]
-  release:
-    types: [published]
-  workflow_dispatch:
+    branches:
+      - main
+      - master
 
 name: pkgdown
 
 jobs:
   pkgdown:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      R_COMPILE_AND_INSTALL_PACKAGES: 'never'
+
     steps:
       - uses: actions/checkout@v2
 
-      - uses: r-lib/actions/setup-pandoc@v1
+      - uses: r-lib/actions/setup-r@master
 
-      - uses: r-lib/actions/setup-r@v1
-        with:
-          use-public-rspm: true
+      - uses: r-lib/actions/setup-pandoc@master
 
-      - name: Fix igraph source installation in ubuntu
-        if: (runner.os == 'Linux')
+      # - name: Locate fortran v8
+      #   run: |
+      #     brew remove gcc
+      #     brew link gcc@8
+      #
+      # - name: Install X11 dependencies on MacOS
+      #   run: |
+      #     brew install cairo
+
+      - name: Install package 'remotes'
+        run: install.packages('remotes')
+        shell: Rscript {0}
+
+      - name: Install system dependencies
         run: |
-          conda install -c r r-igraph
+          sudo apt-get install libharfbuzz-dev libfribidi-dev libglpk-dev libcurl4-openssl-dev
+          while read -r cmd
+          do
+            eval sudo $cmd
+          done < <(Rscript -e 'writeLines(remotes::system_requirements("ubuntu", "20.04"))')
+      - name: Query dependencies
+        run: |
+          install.packages('remotes')
+          install.packages('igraph')
+          install.packages('pkgdown')
+          install.packages('freetypeharfbuzz')
+          saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
+          writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/R-version")
+        shell: Rscript {0}
 
-      - uses: r-lib/actions/setup-r-dependencies@v1
+      - name: Cache R packages
+        uses: actions/cache@v2
         with:
-          extra-packages: pkgdown
-          needs: website
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
+          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
+
+      - name: Install dependencies
+        run: |
+          remotes::install_deps(dependencies = TRUE)
+          install.packages("pkgdown")
+        shell: Rscript {0}
+
+      - name: Install package
+        run: R CMD INSTALL .
 
       - name: Deploy package
         run: |
-          git config --local user.name "$GITHUB_ACTOR"
-          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
           Rscript -e 'pkgdown::deploy_to_branch(new_process = FALSE)'
