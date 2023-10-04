@@ -20,3 +20,7 @@
 ^data-raw/fns/remove\.R$
 ^data-raw/fns/format\.R$
 ^data-raw/fns/print\.R$
+^data-raw/alt_gh_acts/default_pkgdown\.yaml$
+^data-raw/alt_gh_acts/OS_pkgdown\.yaml$
+^doc$
+^Meta$
