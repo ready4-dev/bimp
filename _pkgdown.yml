@@ -10,7 +10,7 @@ home:
     href: https://github.com/ready4-dev/bimp/releases/download/Documentation_0.0/bimp_User.pdf
   - text: Manual - Developer (PDF)
     href: https://github.com/ready4-dev/bimp/releases/download/Documentation_0.0/bimp_Developer.pdf
-  - text: ready4 framework
+  - text: Framework & Model
     href:  https://www.ready4-dev.com/
 development:
   mode: auto

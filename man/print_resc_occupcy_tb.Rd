@@ -7,8 +7,8 @@
 print_resc_occupcy_tb(
   resc_occupcy_tb,
   resources_tb,
- 
-    caption_1L_chr = "Resource occupancy and proportion of demand met (predicted from current input data)",
+  caption_1L_chr =
+    "Resource occupancy and proportion of demand met (predicted from current input data)",
   mkdn_tbl_ref_1L_chr = "tab:metneed",
   output_type_1L_chr = "HTML",
   use_rdocx_1L_lgl = T
