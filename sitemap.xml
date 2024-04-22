@@ -4,9 +4,6 @@
     <loc>https://ready4-dev.github.io/bimp/404.html</loc>
   </url>
   <url>
-    <loc>https://ready4-dev.github.io/bimp/LICENSE-text.html</loc>
-  </url>
-  <url>
     <loc>https://ready4-dev.github.io/bimp/LICENSE.html</loc>
   </url>
   <url>
@@ -67,6 +64,9 @@
     <loc>https://ready4-dev.github.io/bimp/reference/deprecated.html</loc>
   </url>
   <url>
+    <loc>https://ready4-dev.github.io/bimp/reference/dotdata.html</loc>
+  </url>
+  <url>
     <loc>https://ready4-dev.github.io/bimp/reference/format_bound_resc_tb.html</loc>
   </url>
   <url>
@@ -89,6 +89,9 @@
   </url>
   <url>
     <loc>https://ready4-dev.github.io/bimp/reference/make_resource_use_df.html</loc>
+  </url>
+  <url>
+    <loc>https://ready4-dev.github.io/bimp/reference/nseequals.html</loc>
   </url>
   <url>
     <loc>https://ready4-dev.github.io/bimp/reference/pipe.html</loc>
