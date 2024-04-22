@@ -11,7 +11,10 @@ add_sfcs_to_var_nms(var_nms_chr, data_tb)
 
 \item{data_tb}{Data (a tibble)}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
-add_sfcs_to_var_nms() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add suffices to variable names. Function argument var_nms_chr specifies the object to be updated. The function is called for its side effects and does not return a value.
+add_sfcs_to_var_nms() is an Add function that updates an object by adding new values to new or empty fields. Specifically, this function implements an algorithm to add suffices to variable names. The function is called for its side effects and does not return a value.
 }
 \keyword{internal}

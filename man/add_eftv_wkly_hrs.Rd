@@ -13,6 +13,6 @@ add_eftv_wkly_hrs(resources_tb)
 Resources (a tibble)
 }
 \description{
-add_eftv_wkly_hrs() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add effective weekly hours. Function argument resources_tb specifies the object to be updated. The function returns Resources (a tibble).
+add_eftv_wkly_hrs() is an Add function that updates an object by adding new values to new or empty fields. Specifically, this function implements an algorithm to add effective weekly hours. The function returns Resources (a tibble).
 }
 \keyword{internal}

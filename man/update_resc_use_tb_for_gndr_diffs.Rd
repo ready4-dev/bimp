@@ -33,6 +33,6 @@ update_resc_use_tb_for_gndr_diffs(
 Resource use (a tibble)
 }
 \description{
-update_resc_use_tb_for_gndr_diffs() is an Update function that edits an object, while preserving core object attributes. Specifically, this function implements an algorithm to update resource use tibble for gender differences. Function argument resource_use_tb specifies the object to be updated. Argument fem_uids_chr provides the object to be updated. The function returns Resource use (a tibble).
+update_resc_use_tb_for_gndr_diffs() is an Update function that edits an object, while preserving core object attributes. Specifically, this function implements an algorithm to update resource use tibble for gender differences. The function returns Resource use (a tibble).
 }
 \keyword{internal}

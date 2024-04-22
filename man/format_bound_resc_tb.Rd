@@ -15,6 +15,6 @@ format_bound_resc_tb(bound_resc_tb, simple_outp_1L_lgl = T)
 Bound resource (a tibble)
 }
 \description{
-format_bound_resc_tb() is a Format function that modifies the format of an output. Specifically, this function implements an algorithm to format bound resource tibble. The function returns Bound resource (a tibble).
+format_bound_resc_tb() is a Format function that modifies the format of an object. Specifically, this function implements an algorithm to format bound resource tibble. The function returns Bound resource (a tibble).
 }
 \keyword{internal}

@@ -15,6 +15,6 @@ add_OOS_mins_per_yr(main_calcs_tb, OOS_buffer_prop_dbl = 0.1)
 Main calculations (a tibble)
 }
 \description{
-add_OOS_mins_per_yr() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add occasion of service minimums per year. Function argument main_calcs_tb specifies the object to be updated. The function returns Main calculations (a tibble).
+add_OOS_mins_per_yr() is an Add function that updates an object by adding new values to new or empty fields. Specifically, this function implements an algorithm to add occasion of service minimums per year. The function returns Main calculations (a tibble).
 }
 \keyword{internal}

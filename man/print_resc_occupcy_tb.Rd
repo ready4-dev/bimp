@@ -27,7 +27,10 @@ print_resc_occupcy_tb(
 
 \item{use_rdocx_1L_lgl}{Use rdocx (a logical vector of length one), Default: T}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
-print_resc_occupcy_tb() is a Print function that prints output to console Specifically, this function implements an algorithm to print resource occupancy tibble. The function is called for its side effects and does not return a value.
+print_resc_occupcy_tb() is a Print function that prints output to console. Specifically, this function implements an algorithm to print resource occupancy tibble. The function is called for its side effects and does not return a value.
 }
 \keyword{internal}

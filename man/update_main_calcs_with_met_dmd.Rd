@@ -13,6 +13,6 @@ update_main_calcs_with_met_dmd(input_data_ls)
 Input data (a list)
 }
 \description{
-update_main_calcs_with_met_dmd() is an Update function that edits an object, while preserving core object attributes. Specifically, this function implements an algorithm to update main calculations with met demand. Function argument input_data_ls specifies the object to be updated. The function returns Input data (a list).
+update_main_calcs_with_met_dmd() is an Update function that edits an object, while preserving core object attributes. Specifically, this function implements an algorithm to update main calculations with met demand. The function returns Input data (a list).
 }
 \keyword{internal}

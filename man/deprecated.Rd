@@ -3,7 +3,13 @@
 \name{deprecated}
 \alias{deprecated}
 \title{Deprecated function}
+\value{
+Does not return a value as the function is used to signal that a function argument has been deprecated.
+}
 \description{
-Import of deprecated function as recommended in lifecycle package documentation.
+Import of \code{\link[lifecycle:deprecated]{lifecycle::deprecated()}}. See lifecycle package documentation for detailed description.
+}
+\seealso{
+\code{\link[lifecycle:deprecated]{lifecycle::deprecated()}}
 }
 \keyword{internal}

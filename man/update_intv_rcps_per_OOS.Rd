@@ -9,7 +9,10 @@ update_intv_rcps_per_OOS(main_calcs_tb)
 \arguments{
 \item{main_calcs_tb}{Main calculations (a tibble)}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
-update_intv_rcps_per_OOS() is an Update function that edits an object, while preserving core object attributes. Specifically, this function implements an algorithm to update intervention recipients per occasion of service. Function argument main_calcs_tb specifies the object to be updated. The function is called for its side effects and does not return a value.
+update_intv_rcps_per_OOS() is an Update function that edits an object, while preserving core object attributes. Specifically, this function implements an algorithm to update intervention recipients per occasion of service. The function is called for its side effects and does not return a value.
 }
 \keyword{internal}

@@ -2,7 +2,6 @@
 % Please edit documentation in R/bimp-package.R, R/pkg_bimp.R
 \docType{package}
 \name{bimp-package}
-\alias{bimp}
 \alias{bimp-package}
 \title{bimp: Undertake Health Economic Budget Impact Analysis.}
 \description{
@@ -32,7 +31,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Matthew Hamilton \email{matthew.hamilton1@monash.edu} (\href{https://orcid.org/0000-0001-7407-9194}{ORCID})
+\strong{Maintainer}: Matthew Hamilton \email{matthew.hamilton1@monash.edu} (\href{https://orcid.org/0000-0001-7407-9194}{ORCID}) [copyright holder]
 
 Other contributors:
 \itemize{

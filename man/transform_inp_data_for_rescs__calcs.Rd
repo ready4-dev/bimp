@@ -13,6 +13,6 @@ transform_inp_data_for_rescs__calcs(input_data_ls)
 Input data (a list)
 }
 \description{
-transform_inp_data_for_rescs__calcs() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform input data for resources  calculations. Function argument input_data_ls specifies the object to be updated. The function returns Input data (a list).
+transform_inp_data_for_rescs__calcs() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform input data for resources  calculations. The function returns Input data (a list).
 }
 \keyword{internal}

@@ -1,5 +1,5 @@
 #' Get clone targets
-#' @description get_clone_targets() is a Get function that retrieves a pre-existing data object from memory, local file system or online repository. Specifically, this function implements an algorithm to get clone targets. Function argument input_data_ls specifies the where to look for the required object. The function returns Clone targets (a character vector).
+#' @description get_clone_targets() is a Get function that extracts data from an object. Specifically, this function implements an algorithm to get clone targets. The function returns Clone targets (a character vector).
 #' @param input_data_ls Input data (a list)
 #' @param Sex_1L_chr Sex (a character vector of length one), Default: 'F'
 #' @param Target_1L_chr Target (a character vector of length one), Default: 'AUS_SNR_F'
@@ -16,9 +16,9 @@ get_clone_targets <- function (input_data_ls, Sex_1L_chr = "F", Target_1L_chr = 
     return(clone_targets_chr)
 }
 #' Get number of decimals
-#' @description get_nbr_of_decimals() is a Get function that retrieves a pre-existing data object from memory, local file system or online repository. Specifically, this function implements an algorithm to get number of decimals. Function argument nbr_1L_dbl specifies the where to look for the required object. The function is called for its side effects and does not return a value.
+#' @description get_nbr_of_decimals() is a Get function that extracts data from an object. Specifically, this function implements an algorithm to get number of decimals. The function is called for its side effects and does not return a value.
 #' @param nbr_1L_dbl Number (a double vector of length one)
-#' @return NULL
+#' @return No return value, called for side effects.
 #' @rdname get_nbr_of_decimals
 #' @export 
 #' @keywords internal

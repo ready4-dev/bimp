@@ -15,6 +15,6 @@ transform_inp_ls_for_analysis(input_data_ls, OOS_buffer_prop_dbl = 0.1)
 Transformed input data (a list)
 }
 \description{
-transform_inp_ls_for_analysis() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform input list for analysis. Function argument input_data_ls specifies the object to be updated. Argument OOS_buffer_prop_dbl provides the object to be updated. The function returns Transformed input data (a list).
+transform_inp_ls_for_analysis() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform input list for analysis. The function returns Transformed input data (a list).
 }
 \keyword{internal}

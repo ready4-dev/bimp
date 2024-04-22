@@ -1,15 +1,15 @@
 citHeader(paste0("To cite ",meta$Package," in publications use:"))
 
-citEntry(
-  entry    = "Manual",
+bibentry(
+  bibtype  = "Manual",
   doi      = "10.5281/zenodo.5889462",
   title    = paste0(meta$Package,": ",meta$Title),
-  author   = c(person("Matthew Hamilton <matthew.hamilton1@monash.edu> [aut, cre]", "(<https://orcid.org/0000-0001-7407-9194>)")),
-  year     = "2023",
+  author   = c(person("Matthew Hamilton <matthew.hamilton1@monash.edu> [aut, cre, cph]", "(<https://orcid.org/0000-0001-7407-9194>)")),
+  year     = "2024",
   note     = sprintf("R package version %s", meta$Version),
   url      = "https://ready4-dev.github.io/bimp/",
-  textVersion = paste("Matthew Hamilton <matthew.hamilton1@monash.edu> [aut and cre] (<https://orcid.org/0000-0001-7407-9194>) ",
-  "(2023).",
+  textVersion = paste("Matthew Hamilton <matthew.hamilton1@monash.edu> [aut, cre and cph] (<https://orcid.org/0000-0001-7407-9194>) ",
+  "(2024).",
   paste0(meta$Package,": ",meta$Title,
   "."),
   paste0(sprintf("Version %s", meta$Version),"."),

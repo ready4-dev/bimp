@@ -28,7 +28,7 @@ make_cf_resc_tb <- function (cf_data_ls, resources_tb, OOS_buffer_prop_dbl = 0.1
 #' @param area_var_nm_1L_chr Area variable name (a character vector of length one), Default: 'Recipient_STE_chr'
 #' @param n_rescs__var_nm_1L_chr N resources  variable name (a character vector of length one), Default: 'Unit_Qty_dbl'
 #' @param unit_cost_var_nm_1L_chr Unit cost variable name (a character vector of length one), Default: 'Unit_Cost_Dollars_dbl'
-#' @return NULL
+#' @return No return value, called for side effects.
 #' @rdname make_expenditure_smry_tb
 #' @export 
 #' @importFrom purrr map_dfr

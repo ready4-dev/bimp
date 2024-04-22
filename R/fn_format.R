@@ -1,5 +1,5 @@
 #' Format bound resource tibble
-#' @description format_bound_resc_tb() is a Format function that modifies the format of an output. Specifically, this function implements an algorithm to format bound resource tibble. The function returns Bound resource (a tibble).
+#' @description format_bound_resc_tb() is a Format function that modifies the format of an object. Specifically, this function implements an algorithm to format bound resource tibble. The function returns Bound resource (a tibble).
 #' @param bound_resc_tb Bound resource (a tibble)
 #' @param simple_outp_1L_lgl Simple output (a logical vector of length one), Default: T
 #' @return Bound resource (a tibble)

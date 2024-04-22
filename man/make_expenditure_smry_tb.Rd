@@ -23,6 +23,9 @@ make_expenditure_smry_tb(
 
 \item{unit_cost_var_nm_1L_chr}{Unit cost variable name (a character vector of length one), Default: 'Unit_Cost_Dollars_dbl'}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
 make_expenditure_smry_tb() is a Make function that creates a new R object. Specifically, this function implements an algorithm to make expenditure summary tibble. The function is called for its side effects and does not return a value.
 }

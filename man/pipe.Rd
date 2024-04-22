@@ -3,11 +3,13 @@
 \name{\%>\%}
 \alias{\%>\%}
 \title{Pipe operator}
-\arguments{
-\item{lhs, rhs}{An object and a function to apply to it}
+\value{
+The type of return from this function depends on the left hand side and right hand side arguments supplied to it. In principle, any type of returned object is feasible.
 }
 \description{
-Implements: https://github.com/sckott/analogsea/issues/32
-and https://github.com/rstudio/ggvis/blob/master/R/pipe.R.
+Import of \code{\link[magrittr:pipe]{magrittr::\%>\%()}}. See magrittr package documentation for detailed description.
+}
+\seealso{
+\code{\link[magrittr:pipe]{magrittr::\%>\%()}}
 }
 \keyword{internal}

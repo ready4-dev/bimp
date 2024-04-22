@@ -17,6 +17,6 @@ get_clone_targets(input_data_ls, Sex_1L_chr = "F", Target_1L_chr = "AUS_SNR_F")
 Clone targets (a character vector)
 }
 \description{
-get_clone_targets() is a Get function that retrieves a pre-existing data object from memory, local file system or online repository. Specifically, this function implements an algorithm to get clone targets. Function argument input_data_ls specifies the where to look for the required object. The function returns Clone targets (a character vector).
+get_clone_targets() is a Get function that extracts data from an object. Specifically, this function implements an algorithm to get clone targets. The function returns Clone targets (a character vector).
 }
 \keyword{internal}

@@ -1,5 +1,5 @@
 #' Add effective weekly hours
-#' @description add_eftv_wkly_hrs() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add effective weekly hours. Function argument resources_tb specifies the object to be updated. The function returns Resources (a tibble).
+#' @description add_eftv_wkly_hrs() is an Add function that updates an object by adding new values to new or empty fields. Specifically, this function implements an algorithm to add effective weekly hours. The function returns Resources (a tibble).
 #' @param resources_tb Resources (a tibble)
 #' @return Resources (a tibble)
 #' @rdname add_eftv_wkly_hrs
@@ -15,7 +15,7 @@ add_eftv_wkly_hrs <- function (resources_tb)
     return(resources_tb)
 }
 #' Add main calculations tibble
-#' @description add_main_calcs_tb() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add main calculations tibble. Function argument input_data_ls specifies the object to be updated. The function returns Input data (a list).
+#' @description add_main_calcs_tb() is an Add function that updates an object by adding new values to new or empty fields. Specifically, this function implements an algorithm to add main calculations tibble. The function returns Input data (a list).
 #' @param input_data_ls Input data (a list)
 #' @param OOS_buffer_prop_dbl Occasion of service buffer prop (a double vector), Default: 0.1
 #' @return Input data (a list)
@@ -36,7 +36,7 @@ add_main_calcs_tb <- function (input_data_ls, OOS_buffer_prop_dbl = 0.1)
     return(input_data_ls)
 }
 #' Add maximum weekly occasion of service hours
-#' @description add_max_wkly_OOS_hrs() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add maximum weekly occasion of service hours. Function argument resources_tb specifies the object to be updated. The function returns Resources (a tibble).
+#' @description add_max_wkly_OOS_hrs() is an Add function that updates an object by adding new values to new or empty fields. Specifically, this function implements an algorithm to add maximum weekly occasion of service hours. The function returns Resources (a tibble).
 #' @param resources_tb Resources (a tibble)
 #' @return Resources (a tibble)
 #' @rdname add_max_wkly_OOS_hrs
@@ -51,7 +51,7 @@ add_max_wkly_OOS_hrs <- function (resources_tb)
     return(resources_tb)
 }
 #' Add meets non occasion of service weekly hours test
-#' @description add_meets_non_OOS_wkly_hrs_test() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add meets non occasion of service weekly hours test. Function argument resources_tb specifies the object to be updated. The function returns Resources (a tibble).
+#' @description add_meets_non_OOS_wkly_hrs_test() is an Add function that updates an object by adding new values to new or empty fields. Specifically, this function implements an algorithm to add meets non occasion of service weekly hours test. The function returns Resources (a tibble).
 #' @param resources_tb Resources (a tibble)
 #' @return Resources (a tibble)
 #' @rdname add_meets_non_OOS_wkly_hrs_test
@@ -65,7 +65,7 @@ add_meets_non_OOS_wkly_hrs_test <- function (resources_tb)
     return(resources_tb)
 }
 #' Add n episodes per year
-#' @description add_n_epsds_per_yr() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add n episodes per year. Function argument main_calcs_tb specifies the object to be updated. The function returns Main calculations (a tibble).
+#' @description add_n_epsds_per_yr() is an Add function that updates an object by adding new values to new or empty fields. Specifically, this function implements an algorithm to add n episodes per year. The function returns Main calculations (a tibble).
 #' @param main_calcs_tb Main calculations (a tibble)
 #' @return Main calculations (a tibble)
 #' @rdname add_n_epsds_per_yr
@@ -84,7 +84,7 @@ add_n_epsds_per_yr <- function (main_calcs_tb)
     return(main_calcs_tb)
 }
 #' Add n occasion of service per year
-#' @description add_n_OOS_per_yr() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add n occasion of service per year. Function argument main_calcs_tb specifies the object to be updated. The function returns Main calculations (a tibble).
+#' @description add_n_OOS_per_yr() is an Add function that updates an object by adding new values to new or empty fields. Specifically, this function implements an algorithm to add n occasion of service per year. The function returns Main calculations (a tibble).
 #' @param main_calcs_tb Main calculations (a tibble)
 #' @return Main calculations (a tibble)
 #' @rdname add_n_OOS_per_yr
@@ -98,7 +98,7 @@ add_n_OOS_per_yr <- function (main_calcs_tb)
     return(main_calcs_tb)
 }
 #' Add occasion of service minimums per year
-#' @description add_OOS_mins_per_yr() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add occasion of service minimums per year. Function argument main_calcs_tb specifies the object to be updated. The function returns Main calculations (a tibble).
+#' @description add_OOS_mins_per_yr() is an Add function that updates an object by adding new values to new or empty fields. Specifically, this function implements an algorithm to add occasion of service minimums per year. The function returns Main calculations (a tibble).
 #' @param main_calcs_tb Main calculations (a tibble)
 #' @param OOS_buffer_prop_dbl Occasion of service buffer prop (a double vector), Default: 0.1
 #' @return Main calculations (a tibble)
@@ -113,7 +113,7 @@ add_OOS_mins_per_yr <- function (main_calcs_tb, OOS_buffer_prop_dbl = 0.1)
     return(main_calcs_tb)
 }
 #' Add resource occupancy tibble
-#' @description add_resc_occupcy_tb() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add resource occupancy tibble. Function argument input_data_ls specifies the object to be updated. The function returns Input data (a list).
+#' @description add_resc_occupcy_tb() is an Add function that updates an object by adding new values to new or empty fields. Specifically, this function implements an algorithm to add resource occupancy tibble. The function returns Input data (a list).
 #' @param input_data_ls Input data (a list)
 #' @return Input data (a list)
 #' @rdname add_resc_occupcy_tb
@@ -132,10 +132,10 @@ add_resc_occupcy_tb <- function (input_data_ls)
     return(input_data_ls)
 }
 #' Add suffices to variable names
-#' @description add_sfcs_to_var_nms() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add suffices to variable names. Function argument var_nms_chr specifies the object to be updated. The function is called for its side effects and does not return a value.
+#' @description add_sfcs_to_var_nms() is an Add function that updates an object by adding new values to new or empty fields. Specifically, this function implements an algorithm to add suffices to variable names. The function is called for its side effects and does not return a value.
 #' @param var_nms_chr Variable names (a character vector)
 #' @param data_tb Data (a tibble)
-#' @return NULL
+#' @return No return value, called for side effects.
 #' @rdname add_sfcs_to_var_nms
 #' @export 
 #' @importFrom purrr map_chr
@@ -145,10 +145,10 @@ add_sfcs_to_var_nms <- function (var_nms_chr, data_tb)
     purrr::map_chr(var_nms_chr, ~add_sfx_to_var_nm(.x, data_tb = data_tb))
 }
 #' Add suffix to variable name
-#' @description add_sfx_to_var_nm() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add suffix to variable name. Function argument var_nm_1L_chr specifies the object to be updated. The function is called for its side effects and does not return a value.
+#' @description add_sfx_to_var_nm() is an Add function that updates an object by adding new values to new or empty fields. Specifically, this function implements an algorithm to add suffix to variable name. The function is called for its side effects and does not return a value.
 #' @param var_nm_1L_chr Variable name (a character vector of length one)
 #' @param data_tb Data (a tibble)
-#' @return NULL
+#' @return No return value, called for side effects.
 #' @rdname add_sfx_to_var_nm
 #' @export 
 #' @importFrom dplyr pull

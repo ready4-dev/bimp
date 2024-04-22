@@ -27,6 +27,6 @@ transform_inp_data_for_incld_intvs(
 Input data (a list)
 }
 \description{
-transform_inp_data_for_incld_intvs() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform input data for included interventions. Function argument input_data_ls specifies the object to be updated. Argument incld_intvs_cats_chr provides the object to be updated. The function returns Input data (a list).
+transform_inp_data_for_incld_intvs() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform input data for included interventions. The function returns Input data (a list).
 }
 \keyword{internal}

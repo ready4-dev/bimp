@@ -15,6 +15,6 @@ add_main_calcs_tb(input_data_ls, OOS_buffer_prop_dbl = 0.1)
 Input data (a list)
 }
 \description{
-add_main_calcs_tb() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add main calculations tibble. Function argument input_data_ls specifies the object to be updated. The function returns Input data (a list).
+add_main_calcs_tb() is an Add function that updates an object by adding new values to new or empty fields. Specifically, this function implements an algorithm to add main calculations tibble. The function returns Input data (a list).
 }
 \keyword{internal}

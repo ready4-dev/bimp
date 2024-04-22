@@ -34,6 +34,6 @@ Sex_1L_chr = "M", Target_1L_chr = "AUS_SNR_M"))}
 Input data (a list)
 }
 \description{
-transform_to_clone_nat_dmd() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform to clone nat demand. Function argument input_data_ls specifies the object to be updated. Argument clone_ls provides the object to be updated. The function returns Input data (a list).
+transform_to_clone_nat_dmd() is a Transform function that edits an object in such a way that core object attributes - e.g. shape, dimensions, elements, type - are altered. Specifically, this function implements an algorithm to transform to clone nat demand. The function returns Input data (a list).
 }
 \keyword{internal}

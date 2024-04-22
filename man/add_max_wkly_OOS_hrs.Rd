@@ -13,6 +13,6 @@ add_max_wkly_OOS_hrs(resources_tb)
 Resources (a tibble)
 }
 \description{
-add_max_wkly_OOS_hrs() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add maximum weekly occasion of service hours. Function argument resources_tb specifies the object to be updated. The function returns Resources (a tibble).
+add_max_wkly_OOS_hrs() is an Add function that updates an object by adding new values to new or empty fields. Specifically, this function implements an algorithm to add maximum weekly occasion of service hours. The function returns Resources (a tibble).
 }
 \keyword{internal}

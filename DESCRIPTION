@@ -11,7 +11,7 @@ Description: Tools for undertaking budget impact analyses for mental
     bimp package has been made available as part of the process of testing
     and documenting the package.  If you have any questions, please
     contact the authors (matthew.hamilton1@monash.edu).
-License: GPL-3 + file LICENSE
+License: GPL-3
 URL: https://ready4-dev.github.io/bimp/,
     https://github.com/ready4-dev/bimp, https://www.ready4-dev.com/
 Encoding: UTF-8
@@ -19,6 +19,7 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.1
 Suggests: 
     knitr,
+    pkgload,
     rmarkdown,
     testthat
 VignetteBuilder: knitr

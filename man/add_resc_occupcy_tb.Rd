@@ -13,6 +13,6 @@ add_resc_occupcy_tb(input_data_ls)
 Input data (a list)
 }
 \description{
-add_resc_occupcy_tb() is an Add function that updates an object by adding data to that object. Specifically, this function implements an algorithm to add resource occupancy tibble. Function argument input_data_ls specifies the object to be updated. The function returns Input data (a list).
+add_resc_occupcy_tb() is an Add function that updates an object by adding new values to new or empty fields. Specifically, this function implements an algorithm to add resource occupancy tibble. The function returns Input data (a list).
 }
 \keyword{internal}
