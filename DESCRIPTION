@@ -1,8 +1,8 @@
 Package: bimp
 Title: Undertake Health Economic Budget Impact Analysis.
-Version: 0.0.0.9022
+Version: 0.0.0.9023
 Authors@R: c(
-    person("Matthew", "Hamilton", , "matthew.hamilton1@monash.edu", role = c("aut", "cre"),
+    person("Matthew", "Hamilton", , "matthew.hamilton1@monash.edu", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0001-7407-9194")),
     person("Orygen", role = c("cph", "fnd"))
   )
@@ -16,25 +16,24 @@ URL: https://ready4-dev.github.io/bimp/,
     https://github.com/ready4-dev/bimp, https://www.ready4-dev.com/
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat
+VignetteBuilder: knitr
 Imports: 
     dplyr,
-    knitr,
     lifecycle,
     magrittr,
     methods,
     purrr,
     readxl,
-    ready4 (>= 0.0.0.9125),
-    ready4show (>= 0.0.0.9111),
+    ready4,
+    ready4show (>= 0.0.0.9112),
     rlang,
     stats,
     stringr,
-    testthat,
     tibble
-VignetteBuilder: knitr
-Suggests: 
-    rmarkdown
 Remotes: 
-    ready4-dev/ready4,
     ready4-dev/ready4show
